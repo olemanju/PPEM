@@ -35,6 +35,17 @@ public class LoginPageTest extends BaseTestObject
 		
 		objLoginPage= new LoginPage(uiDriver);
 		objLoginPage.verifyIamNewHereText();
+		objLoginPage.getIamNewHereText();
+		objLoginPage.verifyHaveYouBeenProvidedText();
+		objLoginPage.getHaveYouBeenProvidedText();
+		objLoginPage.verifyTemporaryUsernamePasswordText();
+		objLoginPage.getDoYouHaveTempText();
+		objLoginPage.verifyIamNewHereButton();
+		objTermsAndConditionsPage=objLoginPage.clickOnIamNewHereButton();
+		objTermsAndConditionsPage.verifyTermsAndConditonsText();
+		objTermsAndConditionsPage.verifyIdonotAcceptbutton();
+		objLoginPage=objTermsAndConditionsPage.clickonIdonotAcceptButton();
+		objLoginPage.verifyIamNewHereText();
 	} 
 	catch (Exception e) 
 	{
