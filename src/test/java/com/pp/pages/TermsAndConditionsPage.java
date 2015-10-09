@@ -24,6 +24,8 @@ public class TermsAndConditionsPage extends BasePageObject
 	 * 
 	 */
 	
+	
+	
 	public boolean verifyTermsAndConditonsText() throws Exception
 	{
 		Log.info("verify Terms and conditions Text");
