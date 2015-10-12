@@ -6,6 +6,11 @@ public interface NKConstants {
 	public static final String Path_ResumeInvalid = System.getProperty("user.dir")+"\\src\\test\\resource\\Others\\resume.txt";
 	public static final String Path_ResumeValid = System.getProperty("user.dir")+"\\src\\test\\resource\\Others\\resume.docx";
 	String PAGETITLE_HOMEPAGE = "Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com";
+	/********************************************************************************************************/
+	String IAMNEWHERE="I am new here";
+	String HaveYouBeenProvided="Have you been provided an enrollment token?";
+	String DoyouhaveTempPassword="Do you have a temporary username and password?";
+	/********************************************************************************************************/
     String SKILL = "selenium";
     String LOCATION = "bangalore";
     String EXPERIENCE = "3";
