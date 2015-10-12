@@ -7,9 +7,12 @@ public interface NKConstants {
 	public static final String Path_ResumeValid = System.getProperty("user.dir")+"\\src\\test\\resource\\Others\\resume.docx";
 	String PAGETITLE_HOMEPAGE = "Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com";
 	/********************************************************************************************************/
-	String IAMNEWHERE="I am new here";
+	String IAMNEWHERE="I am ne here";
 	String HaveYouBeenProvided="Have you been provided an enrollment token?";
 	String DoyouhaveTempPassword="Do you have a temporary username and password?";
+	String Enroll_Form_title="New to Patient Portal?";
+	String EnrollPage_Text1="This is your first step to the enrollment process.";
+	String EnrollPage_text2="Please select the option that applies to you and provide the required information.";
 	/********************************************************************************************************/
     String SKILL = "selenium";
     String LOCATION = "bangalore";
