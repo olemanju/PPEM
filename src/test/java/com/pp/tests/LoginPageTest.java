@@ -94,7 +94,7 @@ public class LoginPageTest extends BaseTestObject
 			objLoginPage.verifyPasswordTextbox();
 			objLoginPage.enterPassword("asdasd1");
 			objLoginPage.clickOnLoginButton();
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			objLoginPage.verifyGetErrorMessageforInvalidUsernameAndPassword();
 			
 			
