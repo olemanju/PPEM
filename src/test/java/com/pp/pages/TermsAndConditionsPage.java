@@ -18,6 +18,7 @@ public class TermsAndConditionsPage extends BasePageObject
 	
 	By TermsAndConditions= By.id("ctl00_ContentPlaceHolder1_lblFormTitle");
 	By IdonotAccept=By.id("ctl00_ContentPlaceHolder1_btnDontAccept");
+	By Iaccept_Btn=By.id("ctl00_ContentPlaceHolder1_btnAccept");
 	
 	boolean flag;
 	
@@ -80,4 +81,46 @@ public class TermsAndConditionsPage extends BasePageObject
 		return new LoginPage(uiDriver);
 	}
 	/******************************************************************************************************************************************************************************************/
+	
+	/**
+	 * @author MRamadurga
+	 * @return Enroll Page
+	 * @throws Exception 
+	 */
+	public boolean verifyIAcceptButton() throws Exception
+	{
+		Log.info("Verifying the IAcceptButton display..");
+		try
+		{
+			boolean flag=isElementPresent(Iaccept_Btn);
+			return flag;
+		}
+		catch(Exception e)
+		{
+			throw new Exception("I Accept button is not displayed.."+e.getLocalizedMessage());
+		}
+	}
+	
+	/***************************************************************************************************************************************************************************************/
+	
+	/**
+	 * @author MRamadurga
+	 * @return EnrollPage(uiDriver)
+	 */
+	public EnrollPage clickOnIAcceptButton() throws Exception
+	{
+		Log.info("Clicking on the IAccept button..");
+		try
+		{
+			uiDriver.findElement(Iaccept_Btn).click();
+			
+		}
+		catch(Exception e)
+		{
+			throw new Exception("Failed to click on I Accept button.."+e.getLocalizedMessage());
+			
+		}
+		return new EnrollPage(uiDriver);
+	}
+	
 }

@@ -343,5 +343,27 @@ public  String getPageTitle()
 				
 			}
 
+	
+	
+	/********************************************************************************************************************************************/
+	/**
+	 * @author MRamadurga
+	 * this verifies the text displayed on the page
+	 * @throws Exception 
+	 */
+	
+	public void verifyTextPresent(String exp_txt,By txt_ele) throws Exception
+	{
+		try
+		{
+			String actText=uiDriver.findElement(txt_ele).getText();
+			 Assert.assertEquals(actText.trim(), exp_txt.trim(),"Specified text is not present in the page");
+		}
+		catch(Exception e)
+		{
+			throw new Exception("error in identifying the specifed element.."+e.getLocalizedMessage());
+		}
+		 
+	}
 
 }
