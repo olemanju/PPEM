@@ -1,5 +1,6 @@
 package com.pp.pages;
 
+import org.apache.bcel.generic.RETURN;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,6 +35,11 @@ public class LoginPage extends BasePageObject
 	By needHelpyourusernameAndPasswordLink=By.id("ctl00_ContentPlaceHolder1_Login2_lnkForgotPassword");
 	By questionmarkImage=By.xpath("//div[@id='divLoginHelpText']/img");
 	By ErrorMessage1=By.id("ctl00_ContentPlaceHolder1_Login2_lblErrorMessage");
+	
+	By warningMessage=By.id("ui-dialog-title-dialog1");
+	By warningmessageContent=By.id("ctl00_ContentPlaceHolder1_Login2_lblPreLockedWarning");
+	By warningClosebutton=By.id("ctl00_ContentPlaceHolder1_Login2_btnCloseHelp");
+	By warningResetUsernamePassword=By.id("ctl00_ContentPlaceHolder1_Login2_lnkNeedHelp");
 	
 	
 	//Variables
@@ -442,4 +448,132 @@ public class LoginPage extends BasePageObject
 	}
 	
 	
+	/******************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 */
+	
+	public boolean verifyWarningMessageHeader() throws Exception
+	{
+		Log.info("Verification of Warning Message");
+		try {
+			flag=isElementPresent(warningMessage);
+			Assert.assertTrue(flag, "Warning Message Text is Missing");
+			return flag;
+			
+		} catch (Exception e) {
+			throw new Exception("FAILED TO VERIFY WARNING MEASSGE HEADER " + "\n verifyWarningMessageHeader" +e.getLocalizedMessage());
+		}
+	}
+	
+	/******************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return UsernamePasswordFindPage
+	 */
+public void verifyWarningTex() throws Exception
+{
+	Log.info("Comparing Waring text Message");
+	try {
+		compareTextValue(uiDriver.findElement(warningMessage).getText().trim(), "WARNING", "Both warning text Messages are not Matching");
+	} catch (Exception e) {
+		throw new Exception("FAILED TO COMPARE WARNING MEASSGE TEXT " + "\n verifyWarningTex" +e.getLocalizedMessage());
+	}
+}
+	/******************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 */
+	public boolean verifyWarningTextMessage() throws Exception
+	{
+		Log.info("Verification of Account locked for 20 min message");
+		try {
+			
+			flag=isElementPresent(warningmessageContent);
+			Assert.assertTrue(flag, "Account will be locked for 20 minutes after 4 failed login attempts Message is Missing");
+			return flag;
+		} catch (Exception e) {
+			throw new Exception("FAILED TO VERIFY verifyWarningTextMessage " + "\n verifyWarningTextMessage" +e.getLocalizedMessage());
+		}
+	}
+	
+	/******************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return UsernamePasswordFindPage
+	 */
+public void verifyWarningTextContent() throws Exception
+{
+	Log.info("Comparing Waring text Message content");
+	try {
+		compareTextValue(uiDriver.findElement(warningmessageContent).getText().trim(), "Account will be locked for 20 minutes after 4 failed login attempts. Please remember that username and password are case sensitive.", "Both warning text Messages Content is not Matching");
+	} catch (Exception e) {
+		throw new Exception("FAILED TO COMPARE WARNING MEASSGE TEXT " + "\n verifyWarningTextContent" +e.getLocalizedMessage());
+	}
+}
+	/******************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 */
+	
+	public boolean verifyWaringCloseButton() throws Exception
+	{
+		Log.info("Verification of warning Close button");
+		try {
+			flag=isElementPresent(warningClosebutton);
+			return flag;
+		} catch (Exception e) {
+			throw new Exception("FAILED TO VERIFY WARNING CLOSE BUTTON " + "\n verifyWaringCloseButton" +e.getLocalizedMessage());
+		}
+	}
+	/******************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 */
+	public boolean verifyWarningClickHereResetLink() throws Exception
+	{
+		Log.info("Verification of warning message reset link");
+		try {
+			flag=isElementPresent(warningResetUsernamePassword);
+			return flag;
+		} catch (Exception e) {
+			throw new Exception("FAILED TO VERIFY WARNING RESET USERNAME AND PASSWORD LIINK  BUTTON " + "\n verifyWarningClickHereResetLink" +e.getLocalizedMessage());
+		}
+	}
+	/******************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return UsernamePasswordFindPage
+	 */
+	public UsernamePasswordFindPage clickOnWaringClickHereRestPasswordUsernameLink() throws Exception
+	{
+		Log.info("Clicking on reset Password and Username link");
+		
+		try {
+			uiDriver.findElement(warningResetUsernamePassword).click();
+		} catch (Exception e) {
+			throw new Exception("FAILED TO CLICK ON  RESET USERNAME AND PASSWORD LIINK  BUTTON " + "\n clickOnWaringClickHereRestPasswordUsernameLink" +e.getLocalizedMessage());
+		}
+		return new UsernamePasswordFindPage(uiDriver);
+	}
+	
+	/******************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return LoginPage
+	 */
+	public LoginPage clickOnWarningCloseButton() throws Exception
+	{
+		Log.info("Clicking on Warning Close button");
+		try {
+			uiDriver.findElement(warningClosebutton).click();
+		} catch (Exception e) {
+			throw new Exception("FAILED TO CLICK ON  WARNING CLOSE BUTTON " + "\n clickOnWarningCloseButton" +e.getLocalizedMessage());
+		}
+		return this;
+	}
 }

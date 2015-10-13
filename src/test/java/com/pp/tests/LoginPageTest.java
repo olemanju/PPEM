@@ -122,5 +122,60 @@ public class LoginPageTest extends BaseTestObject
 			throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithInvalidUsernameAndPassword" +e.getLocalizedMessage());
 		}
 	}
+@Test(priority=5,enabled=true)
+
+public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessage() throws Exception
+{
+	Log.info("Clicking on Login button with Invalid Username and Password");
+	try {
+		
+		objLoginPage= new LoginPage(uiDriver);
+		objLoginPage.verifyUsernameLabel();
+		objLoginPage.verifyUsernameTextbox();
+		objLoginPage.verifyPasswordlabel();
+		objLoginPage.verifyPasswordTextbox();
+		objLoginPage.enterUsername("shruthi1");
+		//soumya1,dshetty1,umashree1,jcotton1,olemnji1,shruthi1,
+		objLoginPage.enterPassword("asdasd1");
+		objLoginPage.clickOnLoginButton();
+		Thread.sleep(4000);
+		objLoginPage.verifyGetErrorMessageforInvalidUsernameAndPassword();
+		objLoginPage.enterPassword("asdasd1");
+		Thread.sleep(2000);
+		objLoginPage.clickOnLoginButton();
+		objLoginPage.verifyWarningMessageHeader();
+		objLoginPage.verifyWarningTex();
+		objLoginPage.verifyWarningTex();
+		objLoginPage.verifyWarningTextContent();
+		objLoginPage.verifyWaringCloseButton();
+		objLoginPage.verifyWarningClickHereResetLink();
+		objUsernamePasswordFindPage=objLoginPage.clickOnWaringClickHereRestPasswordUsernameLink();
+		objUsernamePasswordFindPage.verifyCancelButton();
+		objLoginPage=objUsernamePasswordFindPage.clickOnCancelButton();
+		objLoginPage.verifyUsernameLabel();
+		objLoginPage.verifyUsernameTextbox();
+		objLoginPage.verifyPasswordlabel();
+		objLoginPage.verifyPasswordTextbox();
+		objLoginPage.enterUsername("olemnji1");
+		//soumya1,dshetty1,umashree1
+		objLoginPage.enterPassword("asdasd1");
+		objLoginPage.clickOnLoginButton();
+		Thread.sleep(4000);
+		objLoginPage.verifyGetErrorMessageforInvalidUsernameAndPassword();
+		objLoginPage.enterPassword("asdasd1");
+		Thread.sleep(2000);
+		objLoginPage.clickOnLoginButton();
+		objLoginPage.verifyWarningMessageHeader();
+		objLoginPage.verifyWarningTex();
+		objLoginPage.verifyWarningTex();
+		objLoginPage.verifyWarningTextContent();
+		objLoginPage.verifyWaringCloseButton();
+		objLoginPage.clickOnWarningCloseButton();
+		
+	} catch (Exception e) {
+		throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithInvalidUsernameAndPassword" +e.getLocalizedMessage());
+	}
+}
+
 
 }
