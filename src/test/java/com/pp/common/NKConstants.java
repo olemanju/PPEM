@@ -14,6 +14,8 @@ public interface NKConstants {
 	String Enroll_Form_title="New to Patient Portal?";
 	String EnrollPage_Text1="This is your first step to the enrollment process.";
 	String EnrollPage_text2="Please select the option that applies to you and provide the required information.";
+	String EnrollPage_radio_text1="I was given an enrollment token";
+	String EnrollPage_radio_text2="I have a temporary username and password";
 	/********************************************************************************************************/
     String SKILL = "selenium";
     String LOCATION = "bangalore";
