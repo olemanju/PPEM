@@ -285,6 +285,7 @@ public class LoginPage extends BasePageObject
 		Log.info("username textbox entry");
 		try 
 		{
+			uiDriver.findElement(usernameTextbox).clear();
 			uiDriver.findElement(usernameTextbox).sendKeys(uname);
 		} 
 		catch (Exception e) {
