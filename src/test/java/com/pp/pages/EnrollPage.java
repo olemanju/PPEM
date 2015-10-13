@@ -25,6 +25,8 @@ public class EnrollPage extends BasePageObject
 	By enroll_text2_ele=By.id("ctl00_ContentPlaceHolder1_lblSecondInstruction");
 	
 	
+	/**********************************************************/
+	String Title=null;
 	/**************************************************************************************************************************************************/
 	/**
 	 * @author MRamadurga
