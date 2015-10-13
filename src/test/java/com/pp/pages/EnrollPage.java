@@ -7,7 +7,8 @@ import org.openqa.selenium.WebDriver;
 import com.pp.common.NKConstants;
 import com.pp.util.BasePageObject;
 
-import junit.framework.Assert;
+
+import org.testng.Assert;
 
 public class EnrollPage extends BasePageObject
 {
@@ -25,20 +26,23 @@ public class EnrollPage extends BasePageObject
 	By enroll_text2_ele=By.id("ctl00_ContentPlaceHolder1_lblSecondInstruction");
 	
 	
-	/**********************************************************/
-	String Title=null;
+	/*******************Variables***************************************/
+	
+	String actual_enroll_pagetitle=null;
+	
+	
 	/**************************************************************************************************************************************************/
 	/**
 	 * @author MRamadurga
 	 * @return
 	 * @throws Exception 
 	 */
-	public void verifyEnrollPageDisplay(String expTit) throws Exception
+	public void verifyEnrollPageDisplay(String exp_enroll_page_title) throws Exception
 	{
 		try
 		{
-			String actTit=uiDriver.findElement(enroll_form).getText();
-			Assert.assertEquals(expTit.trim(), actTit.trim(),"Enroll page form Title does not match");
+			 actual_enroll_pagetitle=uiDriver.findElement(enroll_form).getText();
+			Assert.assertEquals(actual_enroll_pagetitle.trim(),exp_enroll_page_title.trim(),"Enroll page form Title does not match");
 			
 		}
 		catch(Exception e)
