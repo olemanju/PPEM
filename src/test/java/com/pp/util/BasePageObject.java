@@ -365,5 +365,14 @@ public  String getPageTitle()
 		}
 		 
 	}
+	/********************************************************************************************************************************************/
+	/**
+	 * @author
+	 * this verifies the text displayed on the page
+	 * @throws Exception 
+	 */
 
+	public  void compareTextValue(String Actual_Text, String Expected_Text, String Message) {
+		Assert.assertEquals(Actual_Text, Expected_Text, Message);
+	}
 }
