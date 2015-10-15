@@ -9,6 +9,7 @@ import com.pp.pages.EnrollPage;
 import com.pp.pages.LoginPage;
 import com.pp.pages.TermsAndConditionsPage;
 import com.pp.util.BaseTestObject;
+import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
 
 public class EnrollPageTest extends BaseTestObject
 {
@@ -25,12 +26,20 @@ public class EnrollPageTest extends BaseTestObject
 	By EnrollPage_Text2_element=By.id("ctl00_ContentPlaceHolder1_lblSecondInstruction");
 	By EnrollPage_Radio1_element=By.xpath("//td[input[@id='ctl00_ContentPlaceHolder1_radEnroll']]/label");
 	By EnrollPage_Radio2_element=By.xpath("//td[input[@id='ctl00_ContentPlaceHolder1_radTempLogin']]/label");
+	By EnrollPage_Next_Btn_element=By.id("ctl00_ContentPlaceHolder1_btnNext");
+	By EnrollPage_Cancel_Btn_element=By.id("ctl00_ContentPlaceHolder1_btnCancel");
+	By EnrollPage_Fraud_element=By.id("ctl00_ContentPlaceHolder1_FraudWarning1_lblDisclaimer");
 	
+	/******************Variables*****************/
+	
+	String Next_Btn_desc="Next";
+	String Cancel_Btn_desc="Cancel";
 	
 	@Test
 	public void verifyEnrollPageElements() throws Exception
 	{
 		objLoginPage=new LoginPage(uiDriver);
+		
 		objTermsCondition=objLoginPage.clickOnIamNewHereButton();
 		objEnrollPage=objTermsCondition.clickOnIAcceptButton();
 		objEnrollPage.verifyEnrollPageDisplay(NKConstants.Enroll_Form_title);
@@ -38,8 +47,9 @@ public class EnrollPageTest extends BaseTestObject
 		objEnrollPage.verifyTextPresent(NKConstants.EnrollPage_text2, EnrollPage_Text2_element);
 		objEnrollPage.verifyEnrollPageRadioButtons(EnrollPage_Radio1_element, NKConstants.EnrollPage_radio_text1);
 		objEnrollPage.verifyEnrollPageRadioButtons(EnrollPage_Radio2_element, NKConstants.EnrollPage_radio_text2);
-		
-		
+		objEnrollPage.verifyEnrollPageButtons(EnrollPage_Next_Btn_element, Next_Btn_desc);
+		objEnrollPage.verifyEnrollPageRadioButtons(EnrollPage_Cancel_Btn_element, Cancel_Btn_desc);
+		objEnrollPage.verifyFraud_Text_Display(NKConstants.EnrollPage_Fraud_Text, EnrollPage_Fraud_element);
 	}
 
 }

@@ -16,6 +16,7 @@ public interface NKConstants {
 	String EnrollPage_text2="Please select the option that applies to you and provide the required information.";
 	String EnrollPage_radio_text1="I was given an enrollment token";
 	String EnrollPage_radio_text2="I have a temporary username and password";
+	String EnrollPage_Fraud_Text="Any person who knowingly with the intent to defraud any medical agency by concealing and filing false information for medical care or treatment may be found to have committed a fraudulent act which is a crime and may be subject to criminal and civil penalties.";
 	/********************************************************************************************************/
     String SKILL = "selenium";
     String LOCATION = "bangalore";
