@@ -48,7 +48,7 @@ public class EnrollPageTest extends BaseTestObject
 		objEnrollPage.verifyEnrollPageRadioButtons(EnrollPage_Radio1_element, NKConstants.EnrollPage_radio_text1);
 		objEnrollPage.verifyEnrollPageRadioButtons(EnrollPage_Radio2_element, NKConstants.EnrollPage_radio_text2);
 		objEnrollPage.verifyEnrollPageButtons(EnrollPage_Next_Btn_element, Next_Btn_desc);
-		objEnrollPage.verifyEnrollPageRadioButtons(EnrollPage_Cancel_Btn_element, Cancel_Btn_desc);
+		objEnrollPage.verifyEnrollPageButtons(EnrollPage_Cancel_Btn_element, Cancel_Btn_desc);
 		objEnrollPage.verifyFraud_Text_Display(NKConstants.EnrollPage_Fraud_Text, EnrollPage_Fraud_element);
 	}
 
