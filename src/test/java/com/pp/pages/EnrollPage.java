@@ -80,16 +80,21 @@ public class EnrollPage extends BasePageObject
 	 * @throws Exception 
 	 * 
 	 */
-	public boolean verifyEnrollPageRadioButtons(By radio_ele,String radio_text) throws Exception
+	public void verifyEnrollPageRadioButtons(By radio_ele,String radio_text) throws Exception
 	{
 		Log.info("Verifying the display of  "+radio_text+" radio button");
 		try
 		{
 			boolean flag=isElementPresent(radio_ele);
+			if(flag)
+		{
 			String radio_act_txt=uiDriver.findElement(radio_ele).getText();
 			org.testng.Assert.assertEquals(radio_act_txt.trim(), radio_text.trim(),"Radio button text does not match..");
-			
-			return flag;
+		}
+			else
+			{
+				Assert.assertEquals(1, 0,"Radio button"+radio_text+" not displayed");
+			}
 		}
 		catch(Exception e)
 		{
@@ -105,14 +110,21 @@ public class EnrollPage extends BasePageObject
 	 * Desc: verifies the display of buttons in the Enrool page
 	 */
 	
-	public boolean verifyEnrollPageButtons(By Btn_ele,String Btn_desc) throws Exception
+	public void verifyEnrollPageButtons(By Btn_ele,String Btn_desc) throws Exception
 	{
 		try
 		{
 			boolean flag=isElementPresent(Btn_ele);
+			if(flag)
+			{
 			String exp_btn_text=uiDriver.findElement(Btn_ele).getAttribute("value");
 			org.testng.Assert.assertEquals(Btn_desc.trim(), exp_btn_text.trim(),"Button description doesnot match..");
-			return flag;
+			}
+			else
+			{
+				Assert.assertEquals(1, 0,"Enroll Page "+Btn_desc+ " Button not displayed..");
+			}
+			
 		}
 		catch(Exception e)
 		{
@@ -130,9 +142,19 @@ public class EnrollPage extends BasePageObject
 	
 	public void verifyFraud_Text_Display(String exp_fraud_txt,By fraud_ele) throws Exception
 	{
+		boolean flag=isElementPresent(fraud_ele);
 		try
 		{
+			if(flag)
+			{
+			
 			verifyTextPresent(exp_fraud_txt, fraud_ele);
+			}
+			
+			else
+			{
+				Assert.assertEquals(1, 0,"Fraud text not found");
+			}
 			
 		}
 		catch(Exception e)
