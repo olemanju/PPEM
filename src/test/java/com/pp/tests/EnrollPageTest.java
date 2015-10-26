@@ -29,13 +29,13 @@ public class EnrollPageTest extends BaseTestObject
 	By EnrollPage_Next_Btn_element=By.id("ctl00_ContentPlaceHolder1_btnNext");
 	By EnrollPage_Cancel_Btn_element=By.id("ctl00_ContentPlaceHolder1_btnCancel");
 	By EnrollPage_Fraud_element=By.id("ctl00_ContentPlaceHolder1_FraudWarning1_lblDisclaimer");
-	
+	By EnrollPage_enrollment_token_radio=By.id("ctl00_ContentPlaceHolder1_radEnroll");
 	/******************Variables*****************/
 	
 	String Next_Btn_desc="Next";
 	String Cancel_Btn_desc="Cancel";
 	
-	@Test
+	@Test(enabled=false)
 	public void verifyEnrollPageElements() throws Exception
 	{
 		objLoginPage=new LoginPage(uiDriver);
@@ -50,6 +50,17 @@ public class EnrollPageTest extends BaseTestObject
 		objEnrollPage.verifyEnrollPageButtons(EnrollPage_Next_Btn_element, Next_Btn_desc);
 		objEnrollPage.verifyEnrollPageButtons(EnrollPage_Cancel_Btn_element, Cancel_Btn_desc);
 		objEnrollPage.verifyFraud_Text_Display(NKConstants.EnrollPage_Fraud_Text, EnrollPage_Fraud_element);
+	}
+	
+	@Test
+	public void VerifyEnrollmentToken() throws Exception
+	{
+		objLoginPage=new LoginPage(uiDriver);
+		
+		objTermsCondition=objLoginPage.clickOnIamNewHereButton();
+		objEnrollPage=objTermsCondition.clickOnIAcceptButton();
+		uiDriver.findElement(EnrollPage_enrollment_token_radio).click();
+		
 	}
 
 }
