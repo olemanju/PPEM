@@ -18,7 +18,9 @@ public interface NKConstants {
 	String SecurityErrorMessage_invalid2="Your account has been temporarily locked because of successive incorrect login attempts and will automatically un-lock after approximately 20 minutes.";
 	String SecurityErrorMessage_Blank="Incorrect security answer. Please enter your answer again.";
 	String FraudwarningText="Any person who knowingly with the intent to defraud any medical agency by concealing and filing false information for medical care or treatment may be found to have committed a fraudulent act which is a crime and may be subject to criminal and civil penalties.";
-	
+	String EnrollPage_Fraud_Text = "Any person who knowingly with the intent to defraud any medical agency by concealing and filing false information for medical care or treatment may be found to have committed a fraudulent act which is a crime and may be subject to criminal and civil penalties.";
+	String EnrollPage_radio_text1="I was given an enrollment token";
+	String EnrollPage_radio_text2="I have a temporary username and password";
 	
 	/********************************************************************************************************/
     String SKILL = "selenium";
