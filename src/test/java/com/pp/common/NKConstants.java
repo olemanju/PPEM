@@ -14,9 +14,12 @@ public interface NKConstants {
 	String Enroll_Form_title="New to Patient Portal?";
 	String EnrollPage_Text1="This is your first step to the enrollment process.";
 	String EnrollPage_text2="Please select the option that applies to you and provide the required information.";
-	String EnrollPage_radio_text1="I was given an enrollment token";
-	String EnrollPage_radio_text2="I have a temporary username and password";
-	String EnrollPage_Fraud_Text="Any person who knowingly with the intent to defraud any medical agency by concealing and filing false information for medical care or treatment may be found to have committed a fraudulent act which is a crime and may be subject to criminal and civil penalties.";
+	String SecurityErrorMessage_Invalid1="Account will be locked for 20 minutes after 4 failed login attempts. Please enter your answer again.";
+	String SecurityErrorMessage_invalid2="Your account has been temporarily locked because of successive incorrect login attempts and will automatically un-lock after approximately 20 minutes.";
+	String SecurityErrorMessage_Blank="Incorrect security answer. Please enter your answer again.";
+	String FraudwarningText="Any person who knowingly with the intent to defraud any medical agency by concealing and filing false information for medical care or treatment may be found to have committed a fraudulent act which is a crime and may be subject to criminal and civil penalties.";
+	
+	
 	/********************************************************************************************************/
     String SKILL = "selenium";
     String LOCATION = "bangalore";

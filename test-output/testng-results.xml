@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33087" started-at="2015-10-15T18:01:05Z" finished-at="2015-10-15T18:01:38Z">
+  <suite name="Page Object test example" duration-ms="49151" started-at="2015-10-12T17:31:18Z" finished-at="2015-10-12T17:32:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33087" started-at="2015-10-15T18:01:05Z" finished-at="2015-10-15T18:01:38Z">
-      <class name="com.pp.tests.EnrollPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.EnrollPageTest@3184df1d]" name="setup" is-config="true" duration-ms="25820" started-at="2015-10-15T23:31:05Z" finished-at="2015-10-15T23:31:30Z">
+    <test name="sample test" duration-ms="49151" started-at="2015-10-12T17:31:18Z" finished-at="2015-10-12T17:32:07Z">
+      <class name="com.pp.tests.LoginPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="setup" is-config="true" duration-ms="17516" started-at="2015-10-12T23:01:18Z" finished-at="2015-10-12T23:01:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="VerifyEnrollmentToken()[pri:0, instance:com.pp.tests.EnrollPageTest@3184df1d]" name="VerifyEnrollmentToken" duration-ms="3915" started-at="2015-10-15T23:31:30Z" finished-at="2015-10-15T23:31:34Z">
+        <test-method status="PASS" signature="verifyIamNewHereTestCase()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="verifyIamNewHereTestCase" duration-ms="6859" started-at="2015-10-12T23:01:36Z" finished-at="2015-10-12T23:01:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyEnrollmentToken -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.EnrollPageTest@3184df1d]" name="tearDown" is-config="true" duration-ms="3312" started-at="2015-10-15T23:31:34Z" finished-at="2015-10-15T23:31:38Z">
+        </test-method> <!-- verifyIamNewHereTestCase -->
+        <test-method status="PASS" signature="verifyAllReadyMembersElements()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="verifyAllReadyMembersElements" duration-ms="65" started-at="2015-10-12T23:01:42Z" finished-at="2015-10-12T23:01:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllReadyMembersElements -->
+        <test-method status="PASS" signature="clickOnLoginWithInvalidUsernameAndPassword()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="clickOnLoginWithInvalidUsernameAndPassword" duration-ms="11762" started-at="2015-10-12T23:01:42Z" finished-at="2015-10-12T23:01:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnLoginWithInvalidUsernameAndPassword -->
+        <test-method status="PASS" signature="clickOnNeedHelpWithyourUsernamePassLink()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="clickOnNeedHelpWithyourUsernamePassLink" duration-ms="12576" started-at="2015-10-12T23:01:54Z" finished-at="2015-10-12T23:02:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnNeedHelpWithyourUsernamePassLink -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="tearDown" is-config="true" duration-ms="364" started-at="2015-10-12T23:02:07Z" finished-at="2015-10-12T23:02:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.pp.tests.EnrollPageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.pp.tests.LoginPageTest -->
+    </test> <!-- sample test -->
+  </suite> <!-- Page Object test example -->
 </testng-results>
