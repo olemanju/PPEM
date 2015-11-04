@@ -107,7 +107,7 @@ public class EnrollPage extends BasePageObject
 	/**
 	 * @author MRamadurga
 	 * @throws Exception 
-	 * Desc: verifies the display of buttons in the Enrool page
+	 * Desc: verifies the display of buttons in the Enroll page
 	 */
 	
 	public void verifyEnrollPageButtons(By Btn_ele,String Btn_desc) throws Exception
