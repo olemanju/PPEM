@@ -22,7 +22,7 @@ By AnswerYourSecurityquest= By.id("ctl00_ContentPlaceHolder1_lblFormHeader");
 By FraudWarning=By.id("ctl00_ContentPlaceHolder1_FraudWarning1_lblFraudWarning");
 By FraudwarningMessage=By.id("ctl00_ContentPlaceHolder1_FraudWarning1_lblDisclaimer");
 By whatsyourFavColor=By.id("ctl00_ContentPlaceHolder1_lblQuestion");
-By watsfavTextbox=By.id("ctl00_ContentPlaceHolder1_txtAnswer");
+By watsyourfavTextbox=By.id("ctl00_ContentPlaceHolder1_txtAnswer");
 By submit=By.id("ctl00_ContentPlaceHolder1_SubmitButton");
 By SecurityErrorMessage_Blank=By.id("ctl00_ContentPlaceHolder1_lblErrorMessage");
 By BackButton=By.id("ctl00_ContentPlaceHolder1_BackButton");
@@ -128,9 +128,25 @@ public boolean verifyFavTeachernameTextbox() throws Exception
 Log.info("Verification of Favorite Teachername text box");
 try {
 	
-	flag=isElementPresent(watsfavTextbox);
+	flag=isElementPresent(watsyourfavTextbox);
 	Assert.assertTrue(flag, "Favorite Teachername Textbox is missing");
 	return flag;
+} catch (Exception e) {
+	throw new Exception("FAILED TO VERIFY FAVORITE TEACHERSNAME TEXTBOX " +"\n verifyFavTeachernameTextbox" + e.getLocalizedMessage() );
+}
+}
+
+/*****************************************************************************************************************************************************************************************************/
+/**
+ * @author manjunathr
+ * 
+ */
+public void EnterFavTextbox(String FavText) throws Exception
+{
+Log.info("Verification of Favorite Teachername text box");
+try {
+	
+	uiDriver.findElement(watsyourfavTextbox).sendKeys(FavText);
 } catch (Exception e) {
 	throw new Exception("FAILED TO VERIFY FAVORITE TEACHERSNAME TEXTBOX " +"\n verifyFavTeachernameTextbox" + e.getLocalizedMessage() );
 }
@@ -158,7 +174,7 @@ try {
  * @author manjunathr
  * 
  */
-public void clickOnSubmitButton() throws Exception
+public AccountSummaryNew clickOnSubmitButton() throws Exception
 {
 Log.info("Clicking on submit Button");
 try {
@@ -167,6 +183,7 @@ try {
 } catch (Exception e) {
 	throw new Exception("FAILED TO CLICK ON SUBMIT BUTTON " +"\n clickOnSubmitButton" + e.getLocalizedMessage() );
 }
+return new AccountSummaryNew(uiDriver);
 }
 
 

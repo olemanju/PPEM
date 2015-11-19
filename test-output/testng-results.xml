@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Page Object test example" duration-ms="49151" started-at="2015-10-12T17:31:18Z" finished-at="2015-10-12T17:32:07Z">
+  <suite name="Default suite" duration-ms="37985" started-at="2015-11-18T18:10:14Z" finished-at="2015-11-18T18:10:52Z">
     <groups>
     </groups>
-    <test name="sample test" duration-ms="49151" started-at="2015-10-12T17:31:18Z" finished-at="2015-10-12T17:32:07Z">
+    <test name="Default test" duration-ms="37985" started-at="2015-11-18T18:10:14Z" finished-at="2015-11-18T18:10:52Z">
       <class name="com.pp.tests.LoginPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="setup" is-config="true" duration-ms="17516" started-at="2015-10-12T23:01:18Z" finished-at="2015-10-12T23:01:36Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.LoginPageTest@67b64c45]" name="setup" is-config="true" duration-ms="19105" started-at="2015-11-18T23:40:14Z" finished-at="2015-11-18T23:40:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="verifyIamNewHereTestCase()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="verifyIamNewHereTestCase" duration-ms="6859" started-at="2015-10-12T23:01:36Z" finished-at="2015-10-12T23:01:42Z">
+        <test-method status="PASS" signature="clickOnLoginWithValidCredentials()[pri:0, instance:com.pp.tests.LoginPageTest@67b64c45]" name="clickOnLoginWithValidCredentials" duration-ms="18514" started-at="2015-11-18T23:40:33Z" finished-at="2015-11-18T23:40:51Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyIamNewHereTestCase -->
-        <test-method status="PASS" signature="verifyAllReadyMembersElements()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="verifyAllReadyMembersElements" duration-ms="65" started-at="2015-10-12T23:01:42Z" finished-at="2015-10-12T23:01:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAllReadyMembersElements -->
-        <test-method status="PASS" signature="clickOnLoginWithInvalidUsernameAndPassword()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="clickOnLoginWithInvalidUsernameAndPassword" duration-ms="11762" started-at="2015-10-12T23:01:42Z" finished-at="2015-10-12T23:01:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickOnLoginWithInvalidUsernameAndPassword -->
-        <test-method status="PASS" signature="clickOnNeedHelpWithyourUsernamePassLink()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="clickOnNeedHelpWithyourUsernamePassLink" duration-ms="12576" started-at="2015-10-12T23:01:54Z" finished-at="2015-10-12T23:02:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickOnNeedHelpWithyourUsernamePassLink -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.LoginPageTest@1e352bf]" name="tearDown" is-config="true" duration-ms="364" started-at="2015-10-12T23:02:07Z" finished-at="2015-10-12T23:02:07Z">
+        </test-method> <!-- clickOnLoginWithValidCredentials -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.LoginPageTest@67b64c45]" name="tearDown" is-config="true" duration-ms="356" started-at="2015-11-18T23:40:51Z" finished-at="2015-11-18T23:40:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.pp.tests.LoginPageTest -->
-    </test> <!-- sample test -->
-  </suite> <!-- Page Object test example -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

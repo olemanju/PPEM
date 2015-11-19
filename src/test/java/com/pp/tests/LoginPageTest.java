@@ -4,7 +4,10 @@ import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
 import com.beust.jcommander.Parameters;
+import com.pp.pages.AccountSummaryNew;
 import com.pp.pages.LoginPage;
+import com.pp.pages.SecurityQuestion;
+import com.pp.pages.SurveyOptInPage;
 import com.pp.pages.TermsAndConditionsPage;
 import com.pp.pages.UsernamePasswordFindPage;
 import com.pp.util.BaseTestObject;
@@ -18,6 +21,9 @@ public class LoginPageTest extends BaseTestObject
 	LoginPage objLoginPage;
 	TermsAndConditionsPage objTermsAndConditionsPage;
 	UsernamePasswordFindPage objUsernamePasswordFindPage;
+	SecurityQuestion objSecurityQuestion;
+	AccountSummaryNew objAccountSummaryNew;
+	SurveyOptInPage objSurveyOptInPage;
 	
 	
 	boolean flag;
@@ -26,7 +32,7 @@ public class LoginPageTest extends BaseTestObject
 	
 	//@Parameters({"browserType","url"})
 	
-	@Test(priority=1, enabled=true)
+	@Test(priority=1, enabled=false)
 	
 	public void verifyIamNewHereTestCase() throws Exception
 	{
@@ -56,7 +62,7 @@ public class LoginPageTest extends BaseTestObject
 		
 	}
 	
-	@Test(priority=2,enabled=true)
+	@Test(priority=2,enabled=false)
 	
 	public void verifyAllReadyMembersElements() throws Exception
 	{
@@ -79,7 +85,7 @@ public class LoginPageTest extends BaseTestObject
 		
 	}
 	
-	@Test(priority=3,enabled=true)
+	@Test(priority=3,enabled=false)
 	
 	public void clickOnLoginWithInvalidUsernameAndPassword() throws Exception
 	{
@@ -103,7 +109,7 @@ public class LoginPageTest extends BaseTestObject
 		}
 	}
 	
-@Test(priority=4,enabled=true)
+@Test(priority=4,enabled=false)
 	
 	public void clickOnNeedHelpWithyourUsernamePassLink() throws Exception
 	{
@@ -122,7 +128,7 @@ public class LoginPageTest extends BaseTestObject
 			throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithInvalidUsernameAndPassword" +e.getLocalizedMessage());
 		}
 	}
-@Test(priority=5,enabled=true)
+@Test(priority=5,enabled=false)
 
 public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessage() throws Exception
 {
@@ -179,6 +185,37 @@ public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessa
 		throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithInvalidUsernameAndPassword" +e.getLocalizedMessage());
 	}
 }
+
+@Test(priority=6, enabled=true)
+public void clickOnLoginWithValidCredentials() throws Exception
+{
+	
+	try 
+	{
+		objLoginPage = new LoginPage(uiDriver);
+		objLoginPage.verifyUsernameLabel();
+		objLoginPage.verifyPasswordlabel();
+		objLoginPage.verifyUsernameTextbox();
+		objLoginPage.enterUsername("olemanju12");
+		objLoginPage.enterPassword("dshetty1");
+		objSecurityQuestion	=objLoginPage.clickOnLoginButton();
+		objSecurityQuestion.verifyFruadWarning();
+		objSecurityQuestion.verifyFavTeachernameTextbox();
+		objSecurityQuestion.EnterFavTextbox("dshetty1");
+	objAccountSummaryNew=	objSecurityQuestion.clickOnSubmitButton();
+	objAccountSummaryNew.verifyDashBoardMessage();
+	objAccountSummaryNew.verifyWelcomeMessage();
+	objAccountSummaryNew.verifySignOutButton();
+	objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
+	
+	
+		
+	} 
+	catch (Exception e) 
+	{
+		
+	}
+	}
 
 
 }

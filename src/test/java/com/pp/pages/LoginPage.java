@@ -369,7 +369,7 @@ public class LoginPage extends BasePageObject
 	 * @author manjunathr
 	 * @return 
 	 */
-	public void clickOnLoginButton() throws Exception
+	public SecurityQuestion clickOnLoginButton() throws Exception
 	{
 		Log.info("Clicking on Login button");
 		try {
@@ -377,6 +377,7 @@ public class LoginPage extends BasePageObject
 		} catch (Exception e) {
 			throw new Exception("FAILED WHILE CLICKING ON  THE LOGIN BUTTON  " + "\n clickOnLoginButton" +e.getLocalizedMessage());
 		}
+		return new SecurityQuestion(uiDriver);
 	}
 	
 	/******************************************************************************************************************************************************************************************/
