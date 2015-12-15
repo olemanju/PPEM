@@ -32,7 +32,7 @@ public class LoginPageTest extends BaseTestObject
 	
 	//@Parameters({"browserType","url"})
 	
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	
 	public void verifyIamNewHereTestCase() throws Exception
 	{
@@ -62,7 +62,7 @@ public class LoginPageTest extends BaseTestObject
 		
 	}
 	
-	@Test(priority=2,enabled=false)
+	@Test(priority=2,enabled=true)
 	
 	public void verifyAllReadyMembersElements() throws Exception
 	{
@@ -85,7 +85,7 @@ public class LoginPageTest extends BaseTestObject
 		
 	}
 	
-	@Test(priority=3,enabled=false)
+	@Test(priority=3,enabled=true)
 	
 	public void clickOnLoginWithInvalidUsernameAndPassword() throws Exception
 	{
@@ -109,7 +109,7 @@ public class LoginPageTest extends BaseTestObject
 		}
 	}
 	
-@Test(priority=4,enabled=false)
+@Test(priority=4,enabled=true)
 	
 	public void clickOnNeedHelpWithyourUsernamePassLink() throws Exception
 	{
@@ -128,7 +128,7 @@ public class LoginPageTest extends BaseTestObject
 			throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithInvalidUsernameAndPassword" +e.getLocalizedMessage());
 		}
 	}
-@Test(priority=5,enabled=false)
+@Test(priority=5,enabled=true)
 
 public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessage() throws Exception
 {
@@ -143,7 +143,7 @@ public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessa
 		//objLoginPage.verifyUsernameTextbox();
 		objLoginPage.verifyPasswordlabel();
 		objLoginPage.verifyPasswordTextbox();
-		objLoginPage.enterUsername("shruthi1");
+		objLoginPage.enterUsername("manjunath1234");
 		//soumya1,dshetty1,umashree1,jcotton1,olemnji1,shruthi1,
 		objLoginPage.enterPassword("asdasd1");
 		objLoginPage.clickOnLoginButton();
@@ -189,19 +189,19 @@ public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessa
 @Test(priority=6, enabled=true)
 public void clickOnLoginWithValidCredentials() throws Exception
 {
-	
+	Log.info("----> Verifying the clickOnLoginWithValidCredentials <------------");
 	try 
 	{
 		objLoginPage = new LoginPage(uiDriver);
 		objLoginPage.verifyUsernameLabel();
 		objLoginPage.verifyPasswordlabel();
 		objLoginPage.verifyUsernameTextbox();
-		objLoginPage.enterUsername("olemanju12");
-		objLoginPage.enterPassword("dshetty1");
+		objLoginPage.enterUsername("manjunath1234");
+		objLoginPage.enterPassword("manjunath1234");
 		objSecurityQuestion	=objLoginPage.clickOnLoginButton();
 		objSecurityQuestion.verifyFruadWarning();
 		objSecurityQuestion.verifyFavTeachernameTextbox();
-		objSecurityQuestion.EnterFavTextbox("dshetty1");
+		objSecurityQuestion.EnterFavTextbox("manjunath1234");
 	objAccountSummaryNew=	objSecurityQuestion.clickOnSubmitButton();
 	objAccountSummaryNew.verifyDashBoardMessage();
 	objAccountSummaryNew.verifyWelcomeMessage();
@@ -213,7 +213,7 @@ public void clickOnLoginWithValidCredentials() throws Exception
 	} 
 	catch (Exception e) 
 	{
-		
+		throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithValidCredentials" +e.getLocalizedMessage());
 	}
 	}
 

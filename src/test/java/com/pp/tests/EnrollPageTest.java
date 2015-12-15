@@ -13,7 +13,7 @@ import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
 
 public class EnrollPageTest extends BaseTestObject
 {
-	private static Logger log=Logger.getLogger(Logger.class.getName()); 
+	private static Logger Log=Logger.getLogger(Logger.class.getName()); 
 	
 	/**********************************************************************************************************************************************/
 	
@@ -35,31 +35,42 @@ public class EnrollPageTest extends BaseTestObject
 	String Next_Btn_desc="Next";
 	String Cancel_Btn_desc="Cancel";
 	
-	@Test(enabled=false)
+	@Test(priority=1,enabled=true)
 	public void verifyEnrollPageElements() throws Exception
 	{
-		objLoginPage=new LoginPage(uiDriver);
+		Log.info("Verification of Enrollment Elements");
+		try {
+			objLoginPage=new LoginPage(uiDriver);
+			objTermsCondition=objLoginPage.clickOnIamNewHereButton();
+			objEnrollPage=objTermsCondition.clickOnIAcceptButton();
+			objEnrollPage.verifyEnrollPageDisplay(NKConstants.Enroll_Form_title);
+			objEnrollPage.verifyTextPresent(NKConstants.EnrollPage_Text1, EnrollPage_Text1_element);
+			objEnrollPage.verifyTextPresent(NKConstants.EnrollPage_text2, EnrollPage_Text2_element);
+			objEnrollPage.verifyEnrollPageRadioButtons(EnrollPage_Radio1_element, NKConstants.EnrollPage_radio_text1);
+			objEnrollPage.verifyEnrollPageRadioButtons(EnrollPage_Radio2_element, NKConstants.EnrollPage_radio_text2);
+			objEnrollPage.verifyEnrollPageButtons(EnrollPage_Next_Btn_element, Next_Btn_desc);
+			objEnrollPage.verifyEnrollPageButtons(EnrollPage_Cancel_Btn_element, Cancel_Btn_desc);
+			objEnrollPage.verifyFraud_Text_Display(NKConstants.EnrollPage_Fraud_Text, EnrollPage_Fraud_element);
+		} catch (Exception e) 
+		{
+		throw new Exception("FAILED VERIFY ENROLLPAGE ELEMENTS TESTCASE" + "\n verifyEnrollPageElements" + e.getLocalizedMessage());
+		}
 		
-		objTermsCondition=objLoginPage.clickOnIamNewHereButton();
-		objEnrollPage=objTermsCondition.clickOnIAcceptButton();
-		objEnrollPage.verifyEnrollPageDisplay(NKConstants.Enroll_Form_title);
-		objEnrollPage.verifyTextPresent(NKConstants.EnrollPage_Text1, EnrollPage_Text1_element);
-		objEnrollPage.verifyTextPresent(NKConstants.EnrollPage_text2, EnrollPage_Text2_element);
-		objEnrollPage.verifyEnrollPageRadioButtons(EnrollPage_Radio1_element, NKConstants.EnrollPage_radio_text1);
-		objEnrollPage.verifyEnrollPageRadioButtons(EnrollPage_Radio2_element, NKConstants.EnrollPage_radio_text2);
-		objEnrollPage.verifyEnrollPageButtons(EnrollPage_Next_Btn_element, Next_Btn_desc);
-		objEnrollPage.verifyEnrollPageButtons(EnrollPage_Cancel_Btn_element, Cancel_Btn_desc);
-		objEnrollPage.verifyFraud_Text_Display(NKConstants.EnrollPage_Fraud_Text, EnrollPage_Fraud_element);
 	}
 	
-	@Test
+	@Test(priority=0,enabled=true)
 	public void VerifyEnrollmentToken() throws Exception
 	{
-		objLoginPage=new LoginPage(uiDriver);
+		Log.info("Verification of Enrollment Token");
+		try {
+			objLoginPage=new LoginPage(uiDriver);
+			objTermsCondition=objLoginPage.clickOnIamNewHereButton();
+			objEnrollPage=objTermsCondition.clickOnIAcceptButton();
+			uiDriver.findElement(EnrollPage_enrollment_token_radio).click();
+		} catch (Exception e) {
+			throw new Exception("FAILED VERIFICATION OF ENROLLMENT TOKEN TEXT BOX" + " \n VerifyEnrollmentToken" +e.getLocalizedMessage());
+		}
 		
-		objTermsCondition=objLoginPage.clickOnIamNewHereButton();
-		objEnrollPage=objTermsCondition.clickOnIAcceptButton();
-		uiDriver.findElement(EnrollPage_enrollment_token_radio).click();
 		
 	}
 

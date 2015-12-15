@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Page Object test example]">
-  <test name="sample test(failed)">
+  <test name="Regression 1(failed)">
     <classes>
       <class name="com.pp.tests.LoginPageTest">
         <methods>
-          <include name="setup"/>
           <include name="tearDown"/>
-          <include name="verifyIamNewHereTestCase"/>
+          <include name="setup"/>
+          <include name="clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessage"/>
         </methods>
       </class> <!-- com.pp.tests.LoginPageTest -->
+      <class name="com.pp.tests.EnrollPageTest">
+        <methods>
+          <include name="verifyEnrollPageElements"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.pp.tests.EnrollPageTest -->
     </classes>
-  </test> <!-- sample test(failed) -->
+  </test> <!-- Regression 1(failed) -->
 </suite> <!-- Failed suite [Page Object test example] -->
