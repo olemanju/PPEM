@@ -196,12 +196,14 @@ public void clickOnLoginWithValidCredentials() throws Exception
 		objLoginPage.verifyUsernameLabel();
 		objLoginPage.verifyPasswordlabel();
 		objLoginPage.verifyUsernameTextbox();
-		objLoginPage.enterUsername("olemanju12");
-		objLoginPage.enterPassword("dshetty1");
+//		objLoginPage.enterUsername("olemanju12");
+//		objLoginPage.enterPassword("dshetty1");
+		objLoginPage.enterUsername("manjunath1234");
+		objLoginPage.enterPassword("manjunath1234");
 		objSecurityQuestion	=objLoginPage.clickOnLoginButton();
 		objSecurityQuestion.verifyFruadWarning();
 		objSecurityQuestion.verifyFavTeachernameTextbox();
-		objSecurityQuestion.EnterFavTextbox("dshetty1");
+		objSecurityQuestion.EnterFavTextbox("manjunath1234");
 	objAccountSummaryNew=	objSecurityQuestion.clickOnSubmitButton();
 	objAccountSummaryNew.verifyDashBoardMessage();
 	objAccountSummaryNew.verifyWelcomeMessage();

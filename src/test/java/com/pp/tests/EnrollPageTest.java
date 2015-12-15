@@ -35,7 +35,7 @@ public class EnrollPageTest extends BaseTestObject
 	String Next_Btn_desc="Next";
 	String Cancel_Btn_desc="Cancel";
 	
-	@Test(enabled=false)
+	@Test
 	public void verifyEnrollPageElements() throws Exception
 	{
 		objLoginPage=new LoginPage(uiDriver);
