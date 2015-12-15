@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="verifyEnrollPageElements"/>
+          <include name="VerifyEnrollmentToken"/>
         </methods>
       </class> <!-- com.pp.tests.EnrollPageTest -->
     </classes>

@@ -32,7 +32,7 @@ public class LoginPageTest extends BaseTestObject
 	
 	//@Parameters({"browserType","url"})
 	
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	
 	public void verifyIamNewHereTestCase() throws Exception
 	{
@@ -62,7 +62,7 @@ public class LoginPageTest extends BaseTestObject
 		
 	}
 	
-	@Test(priority=2,enabled=false)
+	@Test(priority=2,enabled=true)
 	
 	public void verifyAllReadyMembersElements() throws Exception
 	{
@@ -85,7 +85,7 @@ public class LoginPageTest extends BaseTestObject
 		
 	}
 	
-	@Test(priority=3,enabled=false)
+	@Test(priority=3,enabled=true)
 	
 	public void clickOnLoginWithInvalidUsernameAndPassword() throws Exception
 	{
@@ -109,7 +109,7 @@ public class LoginPageTest extends BaseTestObject
 		}
 	}
 	
-@Test(priority=4,enabled=false)
+@Test(priority=4,enabled=true)
 	
 	public void clickOnNeedHelpWithyourUsernamePassLink() throws Exception
 	{
@@ -128,7 +128,7 @@ public class LoginPageTest extends BaseTestObject
 			throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithInvalidUsernameAndPassword" +e.getLocalizedMessage());
 		}
 	}
-@Test(priority=5,enabled=false)
+@Test(priority=5,enabled=true)
 
 public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessage() throws Exception
 {
