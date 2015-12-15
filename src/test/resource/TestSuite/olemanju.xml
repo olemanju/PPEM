@@ -2,9 +2,10 @@
 <suite name="Page Object test example">
 <!-- <parameter name="url" value=""/>
 <parameter name="browserType" value=""/> -->
-  <test name="sample test">
+  <test name="Regression 1">
     <classes>
       <class name="com.pp.tests.LoginPageTest"/>
+      <class name="com.pp.tests.EnrollPageTest"></class>
     </classes>
   </test>
 </suite>
