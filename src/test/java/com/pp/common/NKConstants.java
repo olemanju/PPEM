@@ -22,6 +22,9 @@ public interface NKConstants {
 	String EnrollPage_radio_text1="I was given an enrollment token";
 	String EnrollPage_radio_text2="I have a temporary username and password";
 	
+	/*************************************************** ComposeEmailPage*****************************************************************************/
+	
+	String selectMessageCategoryText="Select Message Category and Recipient";
 	/********************************************************************************************************/
     String SKILL = "selenium";
     String LOCATION = "bangalore";

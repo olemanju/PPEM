@@ -32,6 +32,7 @@ public class AccountSummaryNew extends BasePageObject
 	By Reminders=By.id("ctl00_ContentPlaceHolder1_AlertsWidget2_lblNotificationHeader");
 	By results=By.id("ctl00_ContentPlaceHolder1_ucLabResults_lblLabHeader");
 	By Medicationslbl=By.id("ctl00_ContentPlaceHolder1_ucMedications_lblMedHeader");
+	By composeanEmail=By.linkText("Compose an Email");
 	
 	/* Variables*/
 	
@@ -209,5 +210,85 @@ public class AccountSummaryNew extends BasePageObject
 		} catch (Exception e) {
 			throw new Exception("FAILED WHILE VERIFYING THE PATIENT INFORMATION LABEL " + "\n verifyPatientInformation" + e.getLocalizedMessage());
 		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public boolean verifyViewProfilePageLink() throws Exception
+	{
+		Log.info("Verification of View Profile page Link");
+		try 
+		{
+			flag=uiDriver.findElement(ViewProfilePage).isDisplayed();
+			Assert.assertTrue(flag, "View Profile Page Link is Missing");
+			return flag;
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE VERIFYING THE VIEW PROFILE PAGE " +"\n verifyViewProfilePageLink" + e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return this
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public AccountSummaryNew clickOnViewProfilePageLink() throws Exception
+	{
+		Log.info("Clicking on View Profile Page Link");
+		try 
+		{
+			uiDriver.findElement(ViewProfilePage).click();
+		} catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE CLICKING ON VIEW PROFILE PAGE LINK " + "\n clickOnViewProfilePageLink" + e.getLocalizedMessage());
+		}
+		return this;
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public boolean verifyComposeAnEmail() throws Exception
+	{
+		Log.info("Verifying the Compose An Email");
+		try 
+		{
+			flag=uiDriver.findElement(composeanEmail).isDisplayed();
+			return flag;
+		}
+		catch (Exception e) {
+			throw new Exception("FAILED WHILE VERIFYING THE COMPOSE AN EMAIL" + "\n verifyComposeAnEmail" + e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public ComposeMessage clickOnComposeEmailClick() throws Exception
+	{
+		Log.info("Clicking on Compose Email Link");
+		try 
+		{
+			uiDriver.findElement(composeanEmail).click();
+		} 
+		catch (Exception e)
+		{
+			throw new Exception("FAILED WHILE CLICKING ON COMPOSE EMAIL LINK" + "\n clickOnComposeEmailClick " +e.getLocalizedMessage());
+		}
+		return new ComposeMessage(uiDriver);
+		
 	}
 }

@@ -340,7 +340,7 @@ public class LoginPage extends BasePageObject
 		Log.info("Entering the Password Text box");
 		
 		try {
-			
+			uiDriver.findElement(PasswordTextbox).clear();
 			uiDriver.findElement(PasswordTextbox).sendKeys(pwd);
 			
 		} catch (Exception e) {
@@ -480,7 +480,8 @@ public void verifyWarningTex() throws Exception
 {
 	Log.info("Comparing Waring text Message");
 	try {
-		compareTextValue(uiDriver.findElement(warningMessage).getText().trim(), "WARNING", "Both warning text Messages are not Matching");
+		String name=uiDriver.findElement(warningmessageContent).getText().trim();
+		compareTextValue(name, "Account will be locked for 20 minutes after 4 failed login attempts.  Please remember that username and password are case sensitive. Please try again.", "Both warning text Messages are not Matching");
 	} catch (Exception e) {
 		throw new Exception("FAILED TO COMPARE WARNING MEASSGE TEXT " + "\n verifyWarningTex" +e.getLocalizedMessage());
 	}

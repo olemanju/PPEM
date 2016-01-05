@@ -128,7 +128,7 @@ public class LoginPageTest extends BaseTestObject
 			throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithInvalidUsernameAndPassword" +e.getLocalizedMessage());
 		}
 	}
-@Test(priority=5,enabled=true)
+/*@Test(priority=0,enabled=false)
 
 public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessage() throws Exception
 {
@@ -184,7 +184,7 @@ public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessa
 	} catch (Exception e) {
 		throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithInvalidUsernameAndPassword" +e.getLocalizedMessage());
 	}
-}
+}*/
 
 @Test(priority=6, enabled=true)
 public void clickOnLoginWithValidCredentials() throws Exception

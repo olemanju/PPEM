@@ -1,82 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="43524" started-at="2015-12-14T11:54:39Z" finished-at="2015-12-14T11:55:22Z">
+  <suite name="Default suite" duration-ms="59944" started-at="2016-01-04T16:44:47Z" finished-at="2016-01-04T16:45:46Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="43524" started-at="2015-12-14T11:54:39Z" finished-at="2015-12-14T11:55:22Z">
-      <class name="com.pp.tests.EnrollPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.EnrollPageTest@7a5d012c]" name="setup" is-config="true" duration-ms="26607" started-at="2015-12-14T17:24:39Z" finished-at="2015-12-14T17:25:05Z">
+    <test name="Default test" duration-ms="59944" started-at="2016-01-04T16:44:47Z" finished-at="2016-01-04T16:45:46Z">
+      <class name="com.pp.tests.LoginPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="setup" is-config="true" duration-ms="18849" started-at="2016-01-04T22:14:47Z" finished-at="2016-01-04T22:15:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="VerifyEnrollmentToken()[pri:0, instance:com.pp.tests.EnrollPageTest@7a5d012c]" name="VerifyEnrollmentToken" duration-ms="6393" started-at="2015-12-14T17:25:05Z" finished-at="2015-12-14T17:25:12Z">
+        <test-method status="PASS" signature="verifyIamNewHereTestCase()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="verifyIamNewHereTestCase" duration-ms="5755" started-at="2016-01-04T22:15:05Z" finished-at="2016-01-04T22:15:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyEnrollmentToken -->
-        <test-method status="FAIL" signature="verifyEnrollPageElements()[pri:0, instance:com.pp.tests.EnrollPageTest@7a5d012c]" name="verifyEnrollPageElements" duration-ms="10095" started-at="2015-12-14T17:25:12Z" finished-at="2015-12-14T17:25:22Z">
-          <exception class="java.lang.Exception">
-            <message>
-              <![CDATA[FAILED WHILE CLICKING ON I AM NEW HERE BUTTON
- clickOnIamNewHereButtonUnable to locate element: {"method":"id","selector":"ctl00_ContentPlaceHolder1_Login2_btnEnroll1"}
-Command duration or timeout: 10.07 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.47.1', revision: 'unknown', time: '2015-07-30 11:02:44'
-System info: host: 'QSIH-00493', ip: '10.145.12.116', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_65'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=42.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: bf9b37b9-1fe4-4950-abad-f51ce3b11622
-*** Element info: {Using=id, value=ctl00_ContentPlaceHolder1_Login2_btnEnroll1}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Exception: FAILED WHILE CLICKING ON I AM NEW HERE BUTTON
- clickOnIamNewHereButtonUnable to locate element: {"method":"id","selector":"ctl00_ContentPlaceHolder1_Login2_btnEnroll1"}
-Command duration or timeout: 10.07 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.47.1', revision: 'unknown', time: '2015-07-30 11:02:44'
-System info: host: 'QSIH-00493', ip: '10.145.12.116', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_65'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=42.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: bf9b37b9-1fe4-4950-abad-f51ce3b11622
-*** Element info: {Using=id, value=ctl00_ContentPlaceHolder1_Login2_btnEnroll1}
-	at com.pp.pages.LoginPage.clickOnIamNewHereButton(LoginPage.java:240)
-	at com.pp.tests.EnrollPageTest.verifyEnrollPageElements(EnrollPageTest.java:43)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1032)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Exception -->
+        </test-method> <!-- verifyIamNewHereTestCase -->
+        <test-method status="PASS" signature="verifyAllReadyMembersElements()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="verifyAllReadyMembersElements" duration-ms="47" started-at="2016-01-04T22:15:11Z" finished-at="2016-01-04T22:15:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEnrollPageElements -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.EnrollPageTest@7a5d012c]" name="tearDown" is-config="true" duration-ms="413" started-at="2015-12-14T17:25:22Z" finished-at="2015-12-14T17:25:22Z">
+        </test-method> <!-- verifyAllReadyMembersElements -->
+        <test-method status="PASS" signature="clickOnLoginWithInvalidUsernameAndPassword()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="clickOnLoginWithInvalidUsernameAndPassword" duration-ms="12402" started-at="2016-01-04T22:15:11Z" finished-at="2016-01-04T22:15:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnLoginWithInvalidUsernameAndPassword -->
+        <test-method status="PASS" signature="clickOnNeedHelpWithyourUsernamePassLink()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="clickOnNeedHelpWithyourUsernamePassLink" duration-ms="5274" started-at="2016-01-04T22:15:24Z" finished-at="2016-01-04T22:15:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnNeedHelpWithyourUsernamePassLink -->
+        <test-method status="PASS" signature="clickOnLoginWithValidCredentials()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="clickOnLoginWithValidCredentials" duration-ms="17309" started-at="2016-01-04T22:15:29Z" finished-at="2016-01-04T22:15:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnLoginWithValidCredentials -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="tearDown" is-config="true" duration-ms="296" started-at="2016-01-04T22:15:46Z" finished-at="2016-01-04T22:15:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.pp.tests.EnrollPageTest -->
+      </class> <!-- com.pp.tests.LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

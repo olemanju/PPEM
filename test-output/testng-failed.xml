@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="clickOnLoginWithValidCredentials"/>
+          <include name="clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessage"/>
         </methods>
       </class> <!-- com.pp.tests.LoginPageTest -->
     </classes>
