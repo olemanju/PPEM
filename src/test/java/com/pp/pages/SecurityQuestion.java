@@ -174,7 +174,7 @@ try {
  * @author manjunathr
  * 
  */
-public AccountSummaryNew clickOnSubmitButton() throws Exception
+public AccountSummaryNewpage clickOnSubmitButton() throws Exception
 {
 Log.info("Clicking on submit Button");
 try {
@@ -183,7 +183,7 @@ try {
 } catch (Exception e) {
 	throw new Exception("FAILED TO CLICK ON SUBMIT BUTTON " +"\n clickOnSubmitButton" + e.getLocalizedMessage() );
 }
-return new AccountSummaryNew(uiDriver);
+return new AccountSummaryNewpage(uiDriver);
 }
 
 

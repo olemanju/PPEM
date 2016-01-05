@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
 import com.beust.jcommander.Parameters;
-import com.pp.pages.AccountSummaryNew;
+import com.pp.pages.AccountSummaryNewpage;
 import com.pp.pages.LoginPage;
 import com.pp.pages.SecurityQuestion;
 import com.pp.pages.SurveyOptInPage;
@@ -22,7 +22,7 @@ public class LoginPageTest extends BaseTestObject
 	TermsAndConditionsPage objTermsAndConditionsPage;
 	UsernamePasswordFindPage objUsernamePasswordFindPage;
 	SecurityQuestion objSecurityQuestion;
-	AccountSummaryNew objAccountSummaryNew;
+	AccountSummaryNewpage objAccountSummaryNew;
 	SurveyOptInPage objSurveyOptInPage;
 	
 	

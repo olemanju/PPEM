@@ -9,10 +9,10 @@ import com.pp.common.NKConstants;
 import com.pp.util.BasePageObject;
 import com.sun.org.apache.bcel.internal.generic.Select;
 
-public class ComposeMessage extends BasePageObject
+public class ComposeMessagePage extends BasePageObject
 {
 
-	public ComposeMessage(WebDriver driver) 
+	public ComposeMessagePage(WebDriver driver) 
 	{
 		super(driver);
 	}
@@ -210,5 +210,141 @@ public class ComposeMessage extends BasePageObject
 		throw new Exception("FAILED WHILE SELECTING THE VALUE FROM THE CATEGORY DROPDOWN " + "\n selectValueFromCategoryDropdown" + e.getLocalizedMessage());
 		}
 	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	public void selectValuefromToDropDown() throws Exception
+	{
+		Log.info("Selection of dropdown value from To Box");
+		
+		try {
+			selectDropDown(Todropdown, "d7b924f1-c28f-4bd2-96d5-08a6ede37ed2");
+			
+		} catch (Exception e) 
+		{
+		throw new Exception("FAILED WHILE SELECTING THE VALUE FROM TO DROPDOWN " +"\n selectValuefromToDropDown"  + e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public boolean verifySubjectLabel() throws Exception
+	{
+		Log.info("Verification of Subject Label");
+		
+		try {
+			flag=isElementPresent(subjectlabel);
+			
+			Assert.assertTrue(flag, "Subject Label IS Missing");
+			return flag;
+		} 
+		catch (Exception e) {
+			throw new Exception("FAILED WHILE VERIFYING THE SUBJECT LABEL" + " \n verifySubjectLabel" + e.getMessage());
+		}
+	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	public boolean verifySubjectTextbox() throws Exception
+	{
+		Log.info("Verification of subject Textbox");
+		try {
+			flag=isElementPresent(subjectText);
+			Assert.assertTrue(flag, "Subject Textbox Element is missing");
+			return flag;
+			
+		} catch (Exception e) {
+		throw new Exception("FAILED WHILE VERIFYING THE SUBJECT TEXT BOX" +"\n verifySubjectTextbox" + e.getLocalizedMessage());
+		}
+	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public void enterSubjectTextEntry(String subject) throws Exception
+	{
+		Log.info("User Entering Subject Text entry");
+		try {
+			uiDriver.findElement(subjectText).sendKeys(subject);
+		} catch (Exception e) {
+			throw new Exception("FAILED WHILE ENTERING THE SUBJECT TEXT BOX "+"\n  enterSubjectTextEntry" + e.getLocalizedMessage());
+		}
+	}
+
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public boolean verifyMessageBoxLabel() throws Exception
+	{
+		Log.info("Verification of MessageBox label");
+		try {
+			flag=isElementPresent(Messagelabel);
+			Assert.assertTrue(flag, "Message Label is Missing on the screen");
+			return flag;
+		} catch (Exception e) {
+			throw new Exception("FAILED WHILE VERIFYING THE SUBJECT LABEL" + "\n verifyMessageBoxLabel" + e.getLocalizedMessage());
+		}
+	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	public void enterMessageText(String msg) throws Exception
+	
+	{
+		Log.info("Enter Message box text box");
+		try {
+			uiDriver.findElement(subjectText).sendKeys(msg);
+		} catch (Exception e) {
+			throw new Exception(	"FAILED WHILE ENTERING SUBJECT TEXTBOX " +"\n enterMessageText " + e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public RequestSubmitted1Page clickonSubmitButtonOfComposeMessage() throws Exception
+	{
+		Log.info("Clicking on submit button");
+		try {
+			uiDriver.findElement(SubmitButton).click();
+		} catch (Exception e) {
+			throw new Exception("FAILED WHILE CLICKING ON SUBMIT BUTTON " +"\n clickonSubmitButtonOfComposeMessage" + e.getLocalizedMessage());
+		}
+		return new RequestSubmitted1Page(uiDriver);
+	}
+	
 }
 

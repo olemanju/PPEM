@@ -9,10 +9,10 @@ import com.pp.util.BasePageObject;
 
 
 
-public class AccountSummaryNew extends BasePageObject
+public class AccountSummaryNewpage extends BasePageObject
 {
 
-	public  AccountSummaryNew(WebDriver driver)
+	public  AccountSummaryNewpage(WebDriver driver)
 	{
 		super(driver);
 	}
@@ -239,7 +239,7 @@ public class AccountSummaryNew extends BasePageObject
 	 * @throws Exception
 	 * This method will check whether Welcome  message is displayed on page.
 	 */
-	public AccountSummaryNew clickOnViewProfilePageLink() throws Exception
+	public AccountSummaryNewpage clickOnViewProfilePageLink() throws Exception
 	{
 		Log.info("Clicking on View Profile Page Link");
 		try 
@@ -277,7 +277,7 @@ public class AccountSummaryNew extends BasePageObject
 	 * @throws Exception
 	 * This method will check whether Welcome  message is displayed on page.
 	 */
-	public ComposeMessage clickOnComposeEmailClick() throws Exception
+	public ComposeMessagePage clickOnComposeEmailClick() throws Exception
 	{
 		Log.info("Clicking on Compose Email Link");
 		try 
@@ -288,7 +288,7 @@ public class AccountSummaryNew extends BasePageObject
 		{
 			throw new Exception("FAILED WHILE CLICKING ON COMPOSE EMAIL LINK" + "\n clickOnComposeEmailClick " +e.getLocalizedMessage());
 		}
-		return new ComposeMessage(uiDriver);
+		return new ComposeMessagePage(uiDriver);
 		
 	}
 }
