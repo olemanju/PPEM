@@ -50,7 +50,8 @@ public class BasePageObject {
 		((JavascriptExecutor) uiDriver).executeScript("arguments[0].click();", element);
 	}
 	
-	public boolean isElementPresent(By by) {
+	public boolean isElementPresent(By by) 
+	{
         try {
             uiDriver.findElement(by);
             return true;

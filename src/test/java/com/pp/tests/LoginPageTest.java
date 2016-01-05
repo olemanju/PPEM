@@ -143,7 +143,7 @@ public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessa
 		//objLoginPage.verifyUsernameTextbox();
 		objLoginPage.verifyPasswordlabel();
 		objLoginPage.verifyPasswordTextbox();
-		objLoginPage.enterUsername("manjunath1234");
+		objLoginPage.enterUsername("shruthi1");
 		//soumya1,dshetty1,umashree1,jcotton1,olemnji1,shruthi1,
 		objLoginPage.enterPassword("asdasd1");
 		objLoginPage.clickOnLoginButton();
@@ -189,13 +189,15 @@ public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessa
 @Test(priority=6, enabled=true)
 public void clickOnLoginWithValidCredentials() throws Exception
 {
-	Log.info("----> Verifying the clickOnLoginWithValidCredentials <------------");
+	
 	try 
 	{
 		objLoginPage = new LoginPage(uiDriver);
 		objLoginPage.verifyUsernameLabel();
 		objLoginPage.verifyPasswordlabel();
 		objLoginPage.verifyUsernameTextbox();
+//		objLoginPage.enterUsername("olemanju12");
+//		objLoginPage.enterPassword("dshetty1");
 		objLoginPage.enterUsername("manjunath1234");
 		objLoginPage.enterPassword("manjunath1234");
 		objSecurityQuestion	=objLoginPage.clickOnLoginButton();
@@ -213,7 +215,7 @@ public void clickOnLoginWithValidCredentials() throws Exception
 	} 
 	catch (Exception e) 
 	{
-		throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithValidCredentials" +e.getLocalizedMessage());
+		
 	}
 	}
 

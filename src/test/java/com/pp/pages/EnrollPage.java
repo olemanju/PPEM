@@ -3,6 +3,7 @@ package com.pp.pages;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.pp.common.NKConstants;
 import com.pp.util.BasePageObject;
@@ -163,6 +164,18 @@ public class EnrollPage extends BasePageObject
 		}
 	}
 
-	/************************************************************************************************************************************************/
+	/**
+	 * @throws Exception **********************************************************************************************************************************************/
 	
+	public void clickOnElement(By ele) throws Exception
+	{
+		try
+		{
+		uiDriver.findElement(ele).click();
+		}
+		catch(Exception e)
+		{
+			throw new Exception("unable to click on the specified element  "+e.getLocalizedMessage());
+		}
+	}
 }
