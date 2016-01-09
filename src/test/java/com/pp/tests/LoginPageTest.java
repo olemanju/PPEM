@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
 import com.beust.jcommander.Parameters;
+import com.pp.common.NKConstants;
 import com.pp.pages.AccountSummaryNewpage;
 import com.pp.pages.LoginPage;
 import com.pp.pages.SecurityQuestion;
@@ -11,6 +12,7 @@ import com.pp.pages.SurveyOptInPage;
 import com.pp.pages.TermsAndConditionsPage;
 import com.pp.pages.UsernamePasswordFindPage;
 import com.pp.util.BaseTestObject;
+import com.pp.util.ExcelutilObject;
 
 public class LoginPageTest extends BaseTestObject
 {
@@ -32,7 +34,7 @@ public class LoginPageTest extends BaseTestObject
 	
 	//@Parameters({"browserType","url"})
 	
-	@Test(priority=1, enabled=true)
+	@Test(priority=1, enabled=false)
 	
 	public void verifyIamNewHereTestCase() throws Exception
 	{
@@ -95,10 +97,18 @@ public class LoginPageTest extends BaseTestObject
 			objLoginPage= new LoginPage(uiDriver);
 			objLoginPage.verifyUsernameLabel();
 			objLoginPage.verifyUsernameTextbox();
-			objLoginPage.enterUsername("qweqwe3");
+			
+			String invalidusername=getExcelTestInvalid(1, 1);
+			System.out.println(invalidusername);
+			objLoginPage.enterUsername(invalidusername);
+			
 			objLoginPage.verifyPasswordlabel();
 			objLoginPage.verifyPasswordTextbox();
-			objLoginPage.enterPassword("asdasd1");
+			
+			String invalidPassword=getExcelTestInvalid(1, 2);
+			System.out.println(invalidPassword);
+			objLoginPage.enterPassword(invalidPassword);
+			
 			objLoginPage.clickOnLoginButton();
 			Thread.sleep(4000);
 			objLoginPage.verifyGetErrorMessageforInvalidUsernameAndPassword();
@@ -196,14 +206,24 @@ public void clickOnLoginWithValidCredentials() throws Exception
 		objLoginPage.verifyUsernameLabel();
 		objLoginPage.verifyPasswordlabel();
 		objLoginPage.verifyUsernameTextbox();
-//		objLoginPage.enterUsername("olemanju12");
-//		objLoginPage.enterPassword("dshetty1");
-		objLoginPage.enterUsername("manjunath1234");
-		objLoginPage.enterPassword("manjunath1234");
+		
+		String Username=getExcelTest(1, 1);
+		System.out.println(Username);
+		objLoginPage.enterUsername(Username);
+		
+		String Password=getExcelTest(1, 2);
+		System.out.println(Password);
+		objLoginPage.enterPassword(Password);
+		
+		
 		objSecurityQuestion	=objLoginPage.clickOnLoginButton();
 		objSecurityQuestion.verifyFruadWarning();
 		objSecurityQuestion.verifyFavTeachernameTextbox();
-		objSecurityQuestion.EnterFavTextbox("manjunath1234");
+		
+		String FavText=getExcelTest(1, 3);
+		System.out.println(FavText);
+		objSecurityQuestion.EnterFavTextbox(FavText);
+		
 	objAccountSummaryNew=	objSecurityQuestion.clickOnSubmitButton();
 	objAccountSummaryNew.verifyDashBoardMessage();
 	objAccountSummaryNew.verifyWelcomeMessage();
@@ -219,5 +239,15 @@ public void clickOnLoginWithValidCredentials() throws Exception
 	}
 	}
 
+public String getExcelTest(int row,int column) throws Exception
+{
+	ExcelutilObject.setExcelFile(NKConstants.Path_TestData, "Login");
+	return ExcelutilObject.getCellData(row, column);
+}
 
+public String getExcelTestInvalid(int row, int column) throws Exception
+{
+ExcelutilObject.setExcelFile(NKConstants.Path_TestData, "InvalidLoginDetails");	
+return ExcelutilObject.getCellData(row, column);
+}
 }
