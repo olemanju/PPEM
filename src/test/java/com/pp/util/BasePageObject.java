@@ -113,8 +113,17 @@ public class BasePageObject {
 		uiDriver.switchTo().window((String) winNames.toArray()[window - 1]);
 	}
 	
+
+	
 	public  void mouseover(By theElement) {
-		new Actions(uiDriver).moveToElement((WebElement) theElement).build().perform();
+		
+		new Actions(uiDriver).moveToElement(uiDriver.findElement(theElement)).build().perform();
+	}
+	
+	public void mouseoverAndClick(By theElement)
+	{
+		new Actions(uiDriver).moveToElement(uiDriver.findElement(theElement)).click().build().perform();
+		
 	}
 
 	

@@ -40,6 +40,7 @@ public class LoginPage extends BasePageObject
 	By warningmessageContent=By.id("ctl00_ContentPlaceHolder1_Login2_lblPreLockedWarning");
 	By warningClosebutton=By.id("ctl00_ContentPlaceHolder1_Login2_btnCloseHelp");
 	By warningResetUsernamePassword=By.id("ctl00_ContentPlaceHolder1_Login2_lnkNeedHelp");
+	By sighoutMessage=By.id("ctl00_ContentPlaceHolder1_lblSessionExpire");
 	
 	
 	
@@ -580,5 +581,15 @@ public void verifyWarningTextContent() throws Exception
 			throw new Exception("FAILED TO CLICK ON  WARNING CLOSE BUTTON " + "\n clickOnWarningCloseButton" +e.getLocalizedMessage());
 		}
 		return this;
+	}
+	
+	/******************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return LoginPage
+	 */
+	public void compareSighOutMessage()
+	{
+		compareTwoStrings(NKConstants.SignoutSuccessMessage, getText(sighoutMessage), "Both the Sign out Messages are not Matching");
 	}
 }

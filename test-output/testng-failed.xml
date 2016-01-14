@@ -6,8 +6,8 @@
       <class name="com.pp.tests.LoginPageTest">
         <methods>
           <include name="tearDown"/>
+          <include name="verifyMailMenuSentItems"/>
           <include name="setup"/>
-          <include name="clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessage"/>
         </methods>
       </class> <!-- com.pp.tests.LoginPageTest -->
     </classes>

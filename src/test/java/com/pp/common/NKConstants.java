@@ -21,10 +21,14 @@ public interface NKConstants {
 	String EnrollPage_Fraud_Text = "Any person who knowingly with the intent to defraud any medical agency by concealing and filing false information for medical care or treatment may be found to have committed a fraudulent act which is a crime and may be subject to criminal and civil penalties.";
 	String EnrollPage_radio_text1="I was given an enrollment token";
 	String EnrollPage_radio_text2="I have a temporary username and password";
+	String SignoutSuccessMessage="You have successfully logged out of Patient Portal.";
 	
 	/*************************************************** ComposeEmailPage*****************************************************************************/
 	
 	String selectMessageCategoryText="Select Message Category and Recipient";
+	
+	/********************************************************RequestSubmitted***************************************************************************/
+	String ConfrmationMessageSent="Your message has been successfully sent.";
 	/********************************************************************************************************/
     String SKILL = "selenium";
     String LOCATION = "bangalore";

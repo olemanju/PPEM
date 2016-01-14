@@ -3,6 +3,7 @@ package com.pp.pages;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import com.pp.util.BasePageObject;
@@ -33,6 +34,11 @@ public class AccountSummaryNewpage extends BasePageObject
 	By results=By.id("ctl00_ContentPlaceHolder1_ucLabResults_lblLabHeader");
 	By Medicationslbl=By.id("ctl00_ContentPlaceHolder1_ucMedications_lblMedHeader");
 	By composeanEmail=By.linkText("Compose an Email");
+	
+	By MailMenu=By.id("ctl00_ucHeader_lnkMailMenuItem");
+	By inBox=By.id("ctl00_ucHeader_mailRepeater_ctl00_lnkSubMenuItem");
+	By SentItems=By.id("ctl00_ucHeader_mailRepeater_ctl01_lnkSubMenuItem");
+	By ComposeMessageElement=By.id("ctl00_ucHeader_mailRepeater_ctl02_lnkSubMenuItem");
 	
 	/* Variables*/
 	
@@ -289,6 +295,226 @@ public class AccountSummaryNewpage extends BasePageObject
 			throw new Exception("FAILED WHILE CLICKING ON COMPOSE EMAIL LINK" + "\n clickOnComposeEmailClick " +e.getLocalizedMessage());
 		}
 		return new ComposeMessagePage(uiDriver);
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public boolean verifyMailMenu() throws Exception
+	{
+		Log.info("Verification of Mail Menu");
+		try 
+		{
+			flag=uiDriver.findElement(MailMenu).isDisplayed();
+			Assert.assertTrue(flag, "Mail Menu is not  displayed");
+			return flag;
+		} 
+		catch (Exception e)
+		{
+		throw new Exception("FAILED WHILE VERIFYING THE MAIL MENU"+ "\n verifyMailMenu"+e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	
+	public void MovetoMailMenu() throws Exception
+	{
+		Log.info("Moving to mail Menu" );
+		try {
+			
+			mouseover(MailMenu);
+			//String Parentwindow=uiDriver.getWindowHandle();
+			//System.out.println(Parentwindow);
+	//Actions avt=new Actions(uiDriver);
+//	avt.moveToElement(uiDriver.findElement(MailMenu)).build().perform();
+			
+		} catch (Exception e) {
+			Log.info("I am not able to move to mail Menu" );
+			throw new Exception("FAILED WHILE MOVING  to THE MAIL MENU "  + "\n MovetoMailMenu"+e.getLocalizedMessage());
+		}
+	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public boolean verifyInbox() throws Exception
+	{
+		Log.info("Verification of inBox Menu");
+		try 
+		{
+			flag=isElementPresent(inBox);
+			Assert.assertTrue(flag, "inbox  Menu is not  displayed");
+			return flag;
+		} 
+		catch (Exception e)
+		{
+		throw new Exception("FAILED WHILE VERIFYING THE INBOX MENU"+ "\n verifyInbox"+e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public boolean verifySentItem() throws Exception
+	{
+		Log.info("Verification of SentItem Menu");
+		try 
+		{
+			flag=isElementPresent(SentItems);
+			Assert.assertTrue(flag, "Sent Item  Menu is not  displayed");
+			return flag;
+		} 
+		catch (Exception e)
+		{
+		throw new Exception("FAILED WHILE VERIFYING THE Sent item MENU"+ "\n verifySentItem"+e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public boolean verifyComposeMessage() throws Exception
+	{
+		Log.info("Verification of Compose Message");
+		try 
+		{
+			flag=isElementPresent(ComposeMessageElement);
+			Assert.assertTrue(flag, "Compose Message Element  Menu is not  displayed");
+			return flag;
+		} 
+		catch (Exception e)
+		{
+		throw new Exception("FAILED WHILE VERIFYING THE Compose Message MENU"+ "\n verifyComposeMessage"+e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public InboxPage clickonInBoxMenu() throws Exception
+	{
+		try 
+		{
+			mouseoverAndClick(Inboxlnk);
+			//MovetoMailMenu();
+			//Actions acti= new Actions(uiDriver);
+			//acti.moveToElement(uiDriver.findElement(inBox)).click().build().perform();
+			Thread.sleep(2000);
+			switchToNewWindow();
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE Clicking on  clickonInBoxMenu"+ "\n clickonInBoxMenu"+e.getLocalizedMessage());
+		}
+		return new InboxPage(uiDriver);
+	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public String  Parentwindow() throws Exception
+	{
+		Log.info("Selection of Parent window");
 		
+		try {
+			
+			Parent_window=getWindowName();
+			return Parent_window;
+			
+		} catch (Exception e) {
+			throw new Exception("FAILED WHILE Clicking on  selectParentwindow"+ "\n selectParentwindow"+e.getLocalizedMessage());
+		}
+	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public void getChildWindowsofInbox() throws Exception
+	{
+Log.info("Selection of getChildWindowsofInbox");
+		
+		try {
+			
+			switchToNewWindow();
+			
+		} catch (Exception e) {
+			throw new Exception("FAILED WHILE Clicking on  getChildWindowsofInbox"+ "\n getChildWindowsofInbox"+e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public void switchtoParentInbox(String parentwin) throws Exception
+	{
+		try {
+			switchToParentWindow(parentwin);
+		} catch (Exception e) {
+			throw new Exception("FAILED WHILE Clicking on  switchtoParentInbox"+ "\n switchtoParentInbox"+e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public OutboxPage clickOnSentItemsMenu() throws Exception
+	{
+		Log.info("Clicking on Sent Items menu");
+		
+		try {
+			
+			mouseoverAndClick(SentItems);
+			Thread.sleep(3000);
+			switchToNewWindow();
+			
+		} 
+		catch (Exception e)
+		{
+			throw new Exception("FAILED WHILE CLICKING ON THE SENT ITEMS MENU " +"\n clickOnSentItemsMenu" + e.getLocalizedMessage());
+		}
+		return new OutboxPage(uiDriver);
 	}
 }

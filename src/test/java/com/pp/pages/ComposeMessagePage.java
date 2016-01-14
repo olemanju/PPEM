@@ -7,7 +7,8 @@ import org.testng.Assert;
 
 import com.pp.common.NKConstants;
 import com.pp.util.BasePageObject;
-import com.sun.org.apache.bcel.internal.generic.Select;
+
+import org.openqa.selenium.support.ui.Select;
 
 public class ComposeMessagePage extends BasePageObject
 {
@@ -116,13 +117,15 @@ public class ComposeMessagePage extends BasePageObject
 	 * @throws Exception
 	 * This method will check whether DashBoard message is displayed on page.
 	 */
-	public void selectPracticeDropdown() throws Exception
+	public void selectPracticeDropdown(String practicename) throws Exception
 	{
 		Log.info("Verification of Practice dropdown");
 		
 		try
 		{
-		selectDropDown(Practicedropdown, "cc9821c7-f6bf-42c5-8178-18b73ec8d02a");
+		//selectDropDown(Practicedropdown, "7c46a640-d4f4-4987-bbc1-cfd0c446b552");
+			
+			new Select(uiDriver.findElement(Practicedropdown)).selectByValue(practicename);
 		} 
 		catch (Exception e) 
 		{
@@ -198,12 +201,13 @@ public class ComposeMessagePage extends BasePageObject
 	 * @throws Exception
 	 * This method will check whether DashBoard message is displayed on page.
 	 */
-	public void selectValueFromCategoryDropdown() throws Exception
+	public void selectValueFromCategoryDropdown(String categorySelect) throws Exception
 	{
 		Log.info("Category Drop down selection");
 		try
 		{
-			selectDropDown(categorydropdownselection, "9a983f9f-0cad-4751-8988-c93707a54ddf");
+			//selectDropDown(categorydropdownselection, "9a983f9f-0cad-4751-8988-c93707a54ddf");
+			new Select(uiDriver.findElement(categorydropdownselection)).selectByVisibleText(categorySelect);
 		} 
 		catch (Exception e) 
 		{
@@ -217,12 +221,13 @@ public class ComposeMessagePage extends BasePageObject
 	 * @throws Exception
 	 * This method will check whether DashBoard message is displayed on page.
 	 */
-	public void selectValuefromToDropDown() throws Exception
+	public void selectValuefromToDropDown(int ToProvider) throws Exception
 	{
 		Log.info("Selection of dropdown value from To Box");
 		
 		try {
-			selectDropDown(Todropdown, "d7b924f1-c28f-4bd2-96d5-08a6ede37ed2");
+			//selectDropDown(Todropdown, "d7b924f1-c28f-4bd2-96d5-08a6ede37ed2");
+			new Select(uiDriver.findElement(Todropdown)).selectByIndex(ToProvider);
 			
 		} catch (Exception e) 
 		{
@@ -322,7 +327,7 @@ public class ComposeMessagePage extends BasePageObject
 	{
 		Log.info("Enter Message box text box");
 		try {
-			uiDriver.findElement(subjectText).sendKeys(msg);
+			uiDriver.findElement(MessageTextBox).sendKeys(msg);
 		} catch (Exception e) {
 			throw new Exception(	"FAILED WHILE ENTERING SUBJECT TEXTBOX " +"\n enterMessageText " + e.getLocalizedMessage());
 		}

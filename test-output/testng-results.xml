@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="59944" started-at="2016-01-04T16:44:47Z" finished-at="2016-01-04T16:45:46Z">
+  <suite name="Default suite" duration-ms="63626" started-at="2016-01-14T17:30:30Z" finished-at="2016-01-14T17:31:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="59944" started-at="2016-01-04T16:44:47Z" finished-at="2016-01-04T16:45:46Z">
+    <test name="Default test" duration-ms="63626" started-at="2016-01-14T17:30:30Z" finished-at="2016-01-14T17:31:34Z">
       <class name="com.pp.tests.LoginPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="setup" is-config="true" duration-ms="18849" started-at="2016-01-04T22:14:47Z" finished-at="2016-01-04T22:15:05Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.LoginPageTest@35f983a6]" name="setup" is-config="true" duration-ms="14978" started-at="2016-01-14T23:00:30Z" finished-at="2016-01-14T23:00:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="verifyIamNewHereTestCase()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="verifyIamNewHereTestCase" duration-ms="5755" started-at="2016-01-04T22:15:05Z" finished-at="2016-01-04T22:15:11Z">
+        <test-method status="PASS" signature="verifyMailMenuOptions()[pri:0, instance:com.pp.tests.LoginPageTest@35f983a6]" name="verifyMailMenuOptions" duration-ms="24832" started-at="2016-01-14T23:00:45Z" finished-at="2016-01-14T23:01:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyIamNewHereTestCase -->
-        <test-method status="PASS" signature="verifyAllReadyMembersElements()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="verifyAllReadyMembersElements" duration-ms="47" started-at="2016-01-04T22:15:11Z" finished-at="2016-01-04T22:15:11Z">
+        </test-method> <!-- verifyMailMenuOptions -->
+        <test-method status="PASS" signature="verifyMailMenuSentItems()[pri:0, instance:com.pp.tests.LoginPageTest@35f983a6]" name="verifyMailMenuSentItems" duration-ms="23467" started-at="2016-01-14T23:01:10Z" finished-at="2016-01-14T23:01:33Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAllReadyMembersElements -->
-        <test-method status="PASS" signature="clickOnLoginWithInvalidUsernameAndPassword()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="clickOnLoginWithInvalidUsernameAndPassword" duration-ms="12402" started-at="2016-01-04T22:15:11Z" finished-at="2016-01-04T22:15:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickOnLoginWithInvalidUsernameAndPassword -->
-        <test-method status="PASS" signature="clickOnNeedHelpWithyourUsernamePassLink()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="clickOnNeedHelpWithyourUsernamePassLink" duration-ms="5274" started-at="2016-01-04T22:15:24Z" finished-at="2016-01-04T22:15:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickOnNeedHelpWithyourUsernamePassLink -->
-        <test-method status="PASS" signature="clickOnLoginWithValidCredentials()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="clickOnLoginWithValidCredentials" duration-ms="17309" started-at="2016-01-04T22:15:29Z" finished-at="2016-01-04T22:15:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickOnLoginWithValidCredentials -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.LoginPageTest@60f82f98]" name="tearDown" is-config="true" duration-ms="296" started-at="2016-01-04T22:15:46Z" finished-at="2016-01-04T22:15:46Z">
+        </test-method> <!-- verifyMailMenuSentItems -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.LoginPageTest@35f983a6]" name="tearDown" is-config="true" duration-ms="339" started-at="2016-01-14T23:01:33Z" finished-at="2016-01-14T23:01:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
