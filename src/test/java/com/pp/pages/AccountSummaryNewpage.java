@@ -517,4 +517,42 @@ Log.info("Selection of getChildWindowsofInbox");
 		}
 		return new OutboxPage(uiDriver);
 	}
+	
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public boolean verifyComposeMessageele() throws Exception
+	{
+		Log.info("Verification Compose Message element");
+		try {
+			flag=isElementPresent(ComposeMessageElement);
+			Assert.assertTrue(flag, "Compose Message Element is missing on the screen");
+			return flag;
+		} catch (Exception e) {
+			throw new Exception("FAILED WHILE VERIFYING THE COMPOSE MESSAGE ELEMENT " +"\n verifyComposeMessage" +e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public ComposeMessagePage clickOnComposeMessageMenu() throws Exception
+	{
+		Log.info("Clicking on Compose message button");
+		
+		try {
+			mouseoverAndClick(ComposeMessageElement);
+		} catch (Exception e) {
+			throw new Exception("FAILED WHILE CLICCKING ON THE COMPOSE MESSAGE BUTTON  " +"\n clickOnComposeMessageMenu "+e.getLocalizedMessage());
+		}
+		return new ComposeMessagePage(uiDriver);
+	}
 }

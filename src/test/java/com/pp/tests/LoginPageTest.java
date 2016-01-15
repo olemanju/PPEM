@@ -43,7 +43,7 @@ public class LoginPageTest extends BaseTestObject
 	
 	//@Parameters({"browserType","url"})
 	
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	
 	public void verifyIamNewHereTestCase() throws Exception
 	{
@@ -73,7 +73,7 @@ public class LoginPageTest extends BaseTestObject
 		
 	}
 	
-	@Test(priority=2,enabled=false)
+	@Test(priority=2,enabled=true)
 	
 	public void verifyAllReadyMembersElements() throws Exception
 	{
@@ -95,7 +95,7 @@ public class LoginPageTest extends BaseTestObject
 		}
 	}
 	
-	@Test(priority=3,enabled=false)
+	@Test(priority=3,enabled=true)
 	
 	public void clickOnLoginWithInvalidUsernameAndPassword() throws Exception
 	{
@@ -127,7 +127,7 @@ public class LoginPageTest extends BaseTestObject
 		}
 	}
 	
-@Test(priority=4,enabled=false)
+@Test(priority=4,enabled=true)
 	
 	public void clickOnNeedHelpWithyourUsernamePassLink() throws Exception
 	{
@@ -204,7 +204,7 @@ public void clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessa
 	}
 }*/
 
-@Test(priority=6, enabled=false)
+@Test(priority=6, enabled=true)
 public void clickOnLoginWithValidCredentials() throws Exception
 {
 	
@@ -248,7 +248,7 @@ public void clickOnLoginWithValidCredentials() throws Exception
 	}
 	}
 
-@Test(priority=7, enabled=false)
+@Test(priority=7, enabled=true)
 public void LoginAndClickonComposeMessage() throws Exception
 {
 	
@@ -424,6 +424,79 @@ public void verifyMailMenuSentItems() throws Exception
 	}
 	}
 
+@Test(priority=10, enabled=true)
+public void verifyMailMenuComposeMessage() throws Exception
+{
+	
+	try 
+	{
+		objLoginPage = new LoginPage(uiDriver);
+		objLoginPage.verifyUsernameLabel();
+		objLoginPage.verifyPasswordlabel();
+		objLoginPage.verifyUsernameTextbox();
+		
+		String Username=getExcelTest(1, 1);
+		System.out.println(Username);
+		objLoginPage.enterUsername(Username);
+		
+		String Password=getExcelTest(1, 2);
+		System.out.println(Password);
+		objLoginPage.enterPassword(Password);
+		
+		
+		objSecurityQuestion	=objLoginPage.clickOnLoginButton();
+		objSecurityQuestion.verifyFruadWarning();
+		objSecurityQuestion.verifyFavTeachernameTextbox();
+		
+		String FavText=getExcelTest(1, 3);
+		System.out.println(FavText);
+		objSecurityQuestion.EnterFavTextbox(FavText);
+		
+	objAccountSummaryNew=	objSecurityQuestion.clickOnSubmitButton();
+	objAccountSummaryNew.verifyDashBoardMessage();
+	objAccountSummaryNew.verifyWelcomeMessage();
+	objAccountSummaryNew.verifyMailMenu();
+	objAccountSummaryNew.Parentwindow();
+	objAccountSummaryNew.MovetoMailMenu();
+	
+     objAccountSummaryNew.verifyComposeMessageele();
+	objComposeMessagePage=objAccountSummaryNew.clickOnComposeEmailClick();
+	//
+	Thread.sleep(2000);
+	objComposeMessagePage.practiceLabel();
+	objComposeMessagePage.selectPracticeDropdown("7c46a640-d4f4-4987-bbc1-cfd0c446b552");
+	Thread.sleep(2000);
+	objComposeMessagePage.verifyCategoryElement();
+	objComposeMessagePage.verifyCategoryDropdown();
+	objComposeMessagePage.selectValueFromCategoryDropdown("Private questions (for only a doctor)");
+	Thread.sleep(2000);
+	objComposeMessagePage.selectValuefromToDropDown(1);
+	objComposeMessagePage.verifySubjectLabel();
+	objComposeMessagePage.verifySubjectTextbox();
+	objComposeMessagePage.enterSubjectTextEntry("Sample Test Ole");
+	objComposeMessagePage.verifyMessageBoxLabel();
+	objComposeMessagePage.enterMessageText("Manjunath, Olemanju, Nanda");
+	objRequestSubmitted1Page=objComposeMessagePage.clickonSubmitButtonOfComposeMessage();
+	objRequestSubmitted1Page.getTextofconfirmationMessage();
+	
+	//
+	
+	objRequestSubmitted1Page.verifyHomeButtonOnOutBox();
+	objAccountSummaryNew=objRequestSubmitted1Page.clickOnHomeButtonOnComposeMessage();
+	
+	Thread.sleep(3000);
+	objAccountSummaryNew.verifySignOutButton();
+	objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
+	objSurveyOptInPage.verifyDecideLaterbutton();
+	objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
+	objLoginPage.compareSighOutMessage();
+	
+	}
+	catch (Exception e)
+	{
+		throw new Exception(" Verify Mail Menu Test case Failed" +e.getLocalizedMessage());
+	}
+	}
 public String getExcelTest(int row,int column) throws Exception
 {
 	ExcelutilObject.setExcelFile(NKConstants.Path_TestData, "Login");
@@ -435,4 +508,8 @@ public String getExcelTestInvalid(int row, int column) throws Exception
 ExcelutilObject.setExcelFile(NKConstants.Path_TestData, "InvalidLoginDetails");	
 return ExcelutilObject.getCellData(row, column);
 }
+
+
+
+
 }

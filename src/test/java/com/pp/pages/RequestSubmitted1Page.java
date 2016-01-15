@@ -17,6 +17,7 @@ import com.pp.util.BasePageObject;
 		}
 		By SignOutButton= By.id("ctl00_SignOutButton");
 		By confirmMessage=By.id("ctl00_ContentPlaceHolder1_lblMessageSent");
+		By HomeButton=By.id("ctl00_ucHeader_lnkHomeMenuItem");
 		
 		String ActualResult=null;
 		String ExpectedResult=null;
@@ -86,6 +87,43 @@ import com.pp.util.BasePageObject;
 			{
 				throw new Exception("FAILED WHILE COMAPARING BOTH THE TEXT i MEAN BOTHE TEXT ARE NOT EQUAL " + "\n verifyConfirmationMessage" +e.getLocalizedMessage());
 			}
+			
+		}
+		/********************************************************************************************************************************************************************************/
+		/**
+		 * @author manjunathr
+		 * @return flag
+		 * @throws Exception
+		 */
+		public boolean verifyHomeButtonOnOutBox() throws Exception
+		{
+			Log.info("Verification of Home button on out box screen");
+			try {
+				
+				flag=isElementPresent(HomeButton);
+				return flag;
+			} catch (Exception e) {
+				throw new Exception("FAILED WHILE VERFYING THE HOME BUTTON ON OUTBOX SCREEN  " +  "\n verifyHomeButtonOnOutBox "+e.getLocalizedMessage());
+			}
+		}
+		
+		/********************************************************************************************************************************************************************************/
+		/**
+		 * @author manjunathr
+		 * @return flag
+		 * @throws Exception
+		 */
+		public AccountSummaryNewpage clickOnHomeButtonOnComposeMessage() throws Exception
+		{
+			Log.info("Clicking on Home button from out box screen");
+			
+			try {
+				uiDriver.findElement(HomeButton).click();
+				
+			} catch (Exception e) {
+				throw new Exception("FAILED WHILE CLICKING ON THE HOMEPAGE BUTTON FROM OUTBOX SCREEN " + "\n clickOnHomeButtonOnOutBoxScreen " +e.getLocalizedMessage());
+			}
+			return new AccountSummaryNewpage(uiDriver);
 			
 		}
 	}
