@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.pp.tests.LoginPageTest">
+      <class name="com.pp.tests.AccountSummaryTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyMailMenuSentItems"/>
+          <include name="verifyMailMenuComposeMessage"/>
           <include name="setup"/>
+          <include name="verifyMailMenuOptions"/>
+          <include name="CheckwithViewProfile"/>
         </methods>
-      </class> <!-- com.pp.tests.LoginPageTest -->
+      </class> <!-- com.pp.tests.AccountSummaryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

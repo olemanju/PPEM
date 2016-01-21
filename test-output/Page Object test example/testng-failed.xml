@@ -3,20 +3,27 @@
 <suite name="Failed suite [Page Object test example]">
   <test name="Regression 1(failed)">
     <classes>
+      <class name="com.pp.tests.ComposeMessageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.pp.tests.ComposeMessageTest -->
+      <class name="com.pp.tests.AccountSummaryTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyMailMenuComposeMessage"/>
+          <include name="setup"/>
+          <include name="CheckwithViewProfile"/>
+          <include name="verifyMailMenuSentItems"/>
+        </methods>
+      </class> <!-- com.pp.tests.AccountSummaryTest -->
       <class name="com.pp.tests.LoginPageTest">
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="clickOnLoginWithvalidUsernameAndInvalidPasswordAndVerifyWarningMessage"/>
         </methods>
       </class> <!-- com.pp.tests.LoginPageTest -->
-      <class name="com.pp.tests.EnrollPageTest">
-        <methods>
-          <include name="verifyEnrollPageElements"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.pp.tests.EnrollPageTest -->
     </classes>
   </test> <!-- Regression 1(failed) -->
 </suite> <!-- Failed suite [Page Object test example] -->

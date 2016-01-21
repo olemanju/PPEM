@@ -38,7 +38,14 @@ public class AccountSummaryNewpage extends BasePageObject
 	By MailMenu=By.id("ctl00_ucHeader_lnkMailMenuItem");
 	By inBox=By.id("ctl00_ucHeader_mailRepeater_ctl00_lnkSubMenuItem");
 	By SentItems=By.id("ctl00_ucHeader_mailRepeater_ctl01_lnkSubMenuItem");
+	By SentitemsLink=By.partialLinkText("Sent Items");
 	By ComposeMessageElement=By.id("ctl00_ucHeader_mailRepeater_ctl02_lnkSubMenuItem");
+	
+	
+By viewProfileLink=By.id("ctl00_ContentPlaceHolder1_dashboardPractices_hplViewPractice");
+
+By accClosebutton=By.xpath("//div[@id='modalWindow']/a");
+
 	
 	/* Variables*/
 	
@@ -308,7 +315,7 @@ public class AccountSummaryNewpage extends BasePageObject
 		Log.info("Verification of Mail Menu");
 		try 
 		{
-			flag=uiDriver.findElement(MailMenu).isDisplayed();
+			flag=isElementPresent(MailMenu);
 			Assert.assertTrue(flag, "Mail Menu is not  displayed");
 			return flag;
 		} 
@@ -375,7 +382,7 @@ public class AccountSummaryNewpage extends BasePageObject
 		Log.info("Verification of SentItem Menu");
 		try 
 		{
-			flag=isElementPresent(SentItems);
+			flag=isElementPresent(SentitemsLink);
 			Assert.assertTrue(flag, "Sent Item  Menu is not  displayed");
 			return flag;
 		} 
@@ -506,10 +513,11 @@ Log.info("Selection of getChildWindowsofInbox");
 		
 		try {
 			
-			mouseoverAndClick(SentItems);
-			Thread.sleep(3000);
-			switchToNewWindow();
-			
+			//mouseover(MailMenu);
+			//getWindowName();
+			mouseoverAndClick(SentitemsLink);
+			//switchToNewWindow();
+   // Thread.sleep(3000);
 		} 
 		catch (Exception e)
 		{
@@ -554,5 +562,70 @@ Log.info("Selection of getChildWindowsofInbox");
 			throw new Exception("FAILED WHILE CLICCKING ON THE COMPOSE MESSAGE BUTTON  " +"\n clickOnComposeMessageMenu "+e.getLocalizedMessage());
 		}
 		return new ComposeMessagePage(uiDriver);
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	public boolean verifyViewProfileLink() throws Exception
+	{
+		Log.info("Verifying the view profile link is displyed on the Page");
+		try 
+		{
+			flag=isElementPresent(viewProfileLink);
+			Assert.assertTrue(flag, "View Profile link  Element Is Missing on the sreen");
+			return flag;
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE VERIFYING THE VIEW PROFILE LINK MESSAGE LABEL " + " \n verifyViewProfileLink "+ e.getLocalizedMessage() );
+		}
+	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	public AccountSummaryNewpage clickonViewProfileLink() throws Exception
+	{
+		Log.info("Verifying the view profile link is displyed on the Page");
+		try 
+		{
+			uiDriver.findElement(viewProfileLink).click();
+			
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE VERIFYING THE VIEW PROFILE LINK MESSAGE LABEL " + " \n verifyViewProfileLink "+ e.getLocalizedMessage() );
+		}
+		return new AccountSummaryNewpage(uiDriver);
+	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	public AccountSummaryNewpage ClickonCloseButton() throws Exception
+	{
+		Log.info("Verifying the close button is displyed on the Page");
+		try 
+		{
+			uiDriver.findElement(accClosebutton).click();
+			
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE VERIFYING THE ClickonCloseButton " + " \n ClickonCloseButton "+ e.getLocalizedMessage() );
+		}
+		return new AccountSummaryNewpage(uiDriver);
 	}
 }

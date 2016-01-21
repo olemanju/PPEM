@@ -21,6 +21,7 @@ public class OutboxPage extends BasePageObject
 	
 	By deletebuttonoutbox=By.id("ctl00_ContentPlaceHolder1_InboxOutboxGrid1_gridMessage_ctl11_btnDeleteMessages");
 	By HomeButton=By.id("ctl00_ucHeader_lnkHomeMenuItem");
+	By countorrecords=By.id("ctl00_ContentPlaceHolder1_InboxOutboxGrid1_gridMessage_ctl18_lblItemTotal");
 	
 	/********************************************************************************************************************************************************************************/
 	/**
@@ -78,6 +79,27 @@ public class OutboxPage extends BasePageObject
 			throw new Exception("FAILED WHILE CLICKING ON THE HOMEPAGE BUTTON FROM OUTBOX SCREEN " + "\n clickOnHomeButtonOnOutBoxScreen " +e.getLocalizedMessage());
 		}
 		return new AccountSummaryNewpage(uiDriver);
+		
+	}
+	/********************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 */
+	public String gettextofCount() throws Exception
+	{
+		Log.info("Clicking on Home button from out box screen");
+		
+		try {
+		String name=getText(countorrecords);
+		System.out.println(name);
+			
+		return name;
+		} catch (Exception e) {
+			throw new Exception("FAILED WHILE CLICKING ON THE HOMEPAGE BUTTON FROM OUTBOX SCREEN " + "\n clickOnHomeButtonOnOutBoxScreen " +e.getLocalizedMessage());
+		}
+		
 		
 	}
 }

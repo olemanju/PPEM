@@ -4,6 +4,7 @@ import org.apache.bcel.generic.RETURN;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.pp.common.NKConstants;
@@ -289,8 +290,10 @@ public class LoginPage extends BasePageObject
 		try 
 		{
 			uiDriver.findElement(usernameTextbox).clear();
-			uiDriver.findElement(usernameTextbox).sendKeys(uname);
-		} 
+			
+		WebElement username=	uiDriver.findElement(usernameTextbox);
+		username.sendKeys(uname);
+				} 
 		catch (Exception e) {
 			throw new Exception("FAILED WHILE ENTERING THE USERNAME  " + "\n enterUsername" +e.getLocalizedMessage());
 		}

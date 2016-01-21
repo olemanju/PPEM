@@ -122,7 +122,9 @@ public class BasePageObject {
 	
 	public void mouseoverAndClick(By theElement)
 	{
-		new Actions(uiDriver).moveToElement(uiDriver.findElement(theElement)).click().build().perform();
+ new Actions(uiDriver).moveToElement(uiDriver.findElement(theElement)).click().build().perform();
+	
+	
 		
 	}
 
@@ -347,12 +349,12 @@ public  String getPageTitle()
 		Assert.assertEquals(Actual, Expected, Message);
 	}
 	
-	public String getExcelTest(int row,int column,String sheetName) throws Exception {
+	public String getExcelTest(int row,int column,String sheetName) throws Exception 
+	{
 				ExcelutilObject.setExcelFile(NKConstants.Path_TestData, sheetName);
 				return ExcelutilObject.getCellData(row, column);
 				
 			}
-
 	
 	
 	/********************************************************************************************************************************************/
