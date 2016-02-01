@@ -2,6 +2,7 @@ package com.pp.tests;
 
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import com.beust.jcommander.Parameters;
@@ -240,6 +241,8 @@ public void clickOnLoginWithValidCredentials() throws Exception
 	objSurveyOptInPage.verifyDecideLaterbutton();
 	objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
 	objLoginPage.compareSighOutMessage();
+	//String txt = "";
+	//ExcelutilObject.writeDataToExcel(sheetName, row, column, txt, path);
 	
 	} 
 	catch (Exception e) 
@@ -261,6 +264,8 @@ public String getExcelTestInvalid(int row, int column) throws Exception
 ExcelutilObject.setExcelFile(NKConstants.Path_TestData, "InvalidLoginDetails");	
 return ExcelutilObject.getCellData(row, column);
 }
+
+
 
 
 

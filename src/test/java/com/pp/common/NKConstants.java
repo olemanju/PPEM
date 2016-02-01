@@ -3,6 +3,7 @@ package com.pp.common;
 public interface NKConstants {
 
 	public static final String Path_TestData = System.getProperty("user.dir")+"\\src\\test\\resource\\TestData\\testDataSheet.xlsx";
+	public static final String Path_Write_TestData= System.getProperty("user.dir")+"\\src\\test\\resource\\TestData\\writeTestDataSheet.xls";
 	public static final String Path_ResumeInvalid = System.getProperty("user.dir")+"\\src\\test\\resource\\Others\\resume.txt";
 	public static final String Path_ResumeValid = System.getProperty("user.dir")+"\\src\\test\\resource\\Others\\resume.docx";
 	String PAGETITLE_HOMEPAGE = "Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com";
