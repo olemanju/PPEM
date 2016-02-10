@@ -21,7 +21,8 @@ public class OutboxPage extends BasePageObject
 	
 	By deletebuttonoutbox=By.id("ctl00_ContentPlaceHolder1_InboxOutboxGrid1_gridMessage_ctl11_btnDeleteMessages");
 	By HomeButton=By.id("ctl00_ucHeader_lnkHomeMenuItem");
-	By countorrecords=By.id("ctl00_ContentPlaceHolder1_InboxOutboxGrid1_gridMessage_ctl18_lblItemTotal");
+	By countorrecords=By.xpath("//table[@id='ctl00_ContentPlaceHolder1_InboxOutboxGrid1_gridMessage']/tbody/tr/td/div[1]/span");
+	//ctl00_ContentPlaceHolder1_InboxOutboxGrid1_gridMessage_ctl21_lblItemTotal
 	
 	/********************************************************************************************************************************************************************************/
 	/**
@@ -96,8 +97,10 @@ public class OutboxPage extends BasePageObject
 		System.out.println(name);
 			
 		return name;
-		} catch (Exception e) {
-			throw new Exception("FAILED WHILE CLICKING ON THE HOMEPAGE BUTTON FROM OUTBOX SCREEN " + "\n clickOnHomeButtonOnOutBoxScreen " +e.getLocalizedMessage());
+		} 
+		catch (Exception e)
+		{
+			throw new Exception("  FAILED WHILE Getting the Count of the Total Check boxes" + "\n clickOnHomeButtonOnOutBoxScreen " +e.getLocalizedMessage());
 		}
 		
 		
