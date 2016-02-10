@@ -47,7 +47,7 @@ public class AccountSummaryTest  extends BaseTestObject
 	
 	
 
-	@Test(priority=1, enabled=true)
+	@Test(priority=1, enabled=false)
 	public void verifyMailMenuOptions() throws Exception
 	{
 		
@@ -102,7 +102,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		}
 		}
 
-	@Test(priority=2, enabled=true)
+	@Test(priority=2, enabled=false)
 	public void verifyMailMenuSentItems() throws Exception
 	{
 		
@@ -158,7 +158,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		}
 		}
 
-	@Test(priority=3, enabled=true)
+	@Test(priority=3, enabled=false)
 	public void verifyMailMenuComposeMessage() throws Exception
 	{
 		
@@ -268,6 +268,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		objAccountSummaryNew.clickonViewProfileLink();
 		objAccountSummaryNew.getTextofPracticeName();
 		objAccountSummaryNew.ClickonCloseButton();
+		Thread.sleep(4000);
 		objAccountSummaryNew.verifySignOutButton();
 		Thread.sleep(4000);
 		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
@@ -283,7 +284,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		}
 		}
 	
-	@Test(priority=5, enabled=true)
+	@Test(priority=5, enabled=false)
 	public void CheckwithViewProfileAndGettheSlots() throws Exception
 	{
 		
@@ -347,7 +348,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		}
 		}
 	
-	@Test(priority=6, enabled=true)
+	@Test(priority=6, enabled=false)
 	public void verifyScheduleMenu() throws Exception
 	{
 		
