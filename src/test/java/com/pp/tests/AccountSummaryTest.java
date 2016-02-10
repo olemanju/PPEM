@@ -47,7 +47,7 @@ public class AccountSummaryTest  extends BaseTestObject
 	
 	
 
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyMailMenuOptions() throws Exception
 	{
 		
@@ -102,7 +102,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		}
 		}
 
-	@Test(priority=2, enabled=false)
+	@Test(priority=2, enabled=true)
 	public void verifyMailMenuSentItems() throws Exception
 	{
 		
@@ -158,7 +158,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		}
 		}
 
-	@Test(priority=3, enabled=false)
+	@Test(priority=3, enabled=true)
 	public void verifyMailMenuComposeMessage() throws Exception
 	{
 		
@@ -284,7 +284,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		}
 		}
 	
-	@Test(priority=5, enabled=false)
+	@Test(priority=5, enabled=true)
 	public void CheckwithViewProfileAndGettheSlots() throws Exception
 	{
 		
@@ -348,7 +348,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		}
 		}
 	
-	@Test(priority=6, enabled=false)
+	@Test(priority=6, enabled=true)
 	public void verifyScheduleMenu() throws Exception
 	{
 		
