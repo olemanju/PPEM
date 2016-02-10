@@ -118,7 +118,8 @@ public  static void setCellData(String sheetName,String Result,  int RowNum, int
 
 	}
 
-public static void writeDataToExcel(String sheetName,int row,int column,String value,String path) throws Exception{
+public static void writeDataToExcel(String sheetName,int row,int column,String value,String path) throws Exception
+{
 	
 	FileOutputStream fileOut = new FileOutputStream(path);
 	

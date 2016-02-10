@@ -1,12 +1,17 @@
 package com.pp.pages;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
+import com.pp.common.NKConstants;
 import com.pp.util.BasePageObject;
+import com.pp.util.ExcelutilObject;
 
 
 
@@ -43,8 +48,23 @@ public class AccountSummaryNewpage extends BasePageObject
 	
 	
 By viewProfileLink=By.id("ctl00_ContentPlaceHolder1_dashboardPractices_hplViewPractice");
+By ppPracticeName=By.xpath("//div/div[@class='modalContent']/div[1]/div[1]");
 
+By ClickToseeHour1=By.id("linkSeeHours0");
+By listofhrs1_xpath=By.xpath("//div[@id='xxx0']/div[4]/div");
+
+By ClickToSeeHours2=By.id("linkSeeHours1");
+By listofhrs2_xpath=By.xpath("//div[@id='xxx1']/div[4]/div");
+
+
+By ClickToseeHours3=By.id("linkSeeHours2");
+By listofhrs3_xpath=By.xpath("//div[@id='xxx2']/div[4]/div");
 By accClosebutton=By.xpath("//div[@id='modalWindow']/a");
+
+
+By ScheduleMenu=By.id("ctl00_ucHeader_lnkScheduleMenuItem");
+By RequestAppt=By.id("ctl00_ucHeader_scheduleRepeater_ctl00_lnkSubMenuItem");
+By MyAppts=By.id("ctl00_ucHeader_scheduleRepeater_ctl01_lnkSubMenuItem");
 
 	
 	/* Variables*/
@@ -55,6 +75,7 @@ By accClosebutton=By.xpath("//div[@id='modalWindow']/a");
 	String Child_window=null;
 	String actual_Result=null;
 	String expected_Result=null;
+	String Ref_value=null;
 	/**********************************************************************************************************************************************************************************************/
 	/**
 	 * @author manjunathr
@@ -338,11 +359,7 @@ By accClosebutton=By.xpath("//div[@id='modalWindow']/a");
 		try {
 			
 			mouseover(MailMenu);
-			//String Parentwindow=uiDriver.getWindowHandle();
-			//System.out.println(Parentwindow);
-	//Actions avt=new Actions(uiDriver);
-//	avt.moveToElement(uiDriver.findElement(MailMenu)).build().perform();
-			
+					
 		} catch (Exception e) {
 			Log.info("I am not able to move to mail Menu" );
 			throw new Exception("FAILED WHILE MOVING  to THE MAIL MENU "  + "\n MovetoMailMenu"+e.getLocalizedMessage());
@@ -424,10 +441,7 @@ By accClosebutton=By.xpath("//div[@id='modalWindow']/a");
 		try 
 		{
 			mouseoverAndClick(Inboxlnk);
-			//MovetoMailMenu();
-			//Actions acti= new Actions(uiDriver);
-			//acti.moveToElement(uiDriver.findElement(inBox)).click().build().perform();
-			Thread.sleep(2000);
+				Thread.sleep(2000);
 			switchToNewWindow();
 		} 
 		catch (Exception e) 
@@ -513,12 +527,8 @@ Log.info("Selection of getChildWindowsofInbox");
 		
 		try {
 			
-			//mouseover(MailMenu);
-			//getWindowName();
 			mouseoverAndClick(SentitemsLink);
-			//switchToNewWindow();
-   // Thread.sleep(3000);
-		} 
+				} 
 		catch (Exception e)
 		{
 			throw new Exception("FAILED WHILE CLICKING ON THE SENT ITEMS MENU " +"\n clickOnSentItemsMenu" + e.getLocalizedMessage());
@@ -628,4 +638,335 @@ Log.info("Selection of getChildWindowsofInbox");
 		}
 		return new AccountSummaryNewpage(uiDriver);
 	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public void getTextofPracticeName() throws Exception
+	{
+		try {
+			getText(ppPracticeName);
+			String Expected="Patient Portal Team Practice2";
+			Assert.assertEquals(getText(ppPracticeName), Expected.toUpperCase()," Practice Name values are not Matching");
+			
+		} catch (Exception e) {
+			throw new Exception("FAILED WHILE COMPAREING TEXT VALUE OF POPUP SCREEN " + "\n getTextofPracticeName" + e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	public boolean verifyClickonHourone() throws Exception
+	{
+		Log.info("Verifying the Click on Hours 1st  link is displyed on the Page");
+		try 
+		{
+			flag=isElementPresent(ClickToseeHour1);
+			Assert.assertTrue(flag, "Click Hours 1  Element Is Missing on the sreen");
+			return flag;
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE VERIFYING THE CLICK ON HOURS 1 LINK MESSAGE LABEL " + " \n verifyClickonHourone "+ e.getLocalizedMessage() );
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public AccountSummaryNewpage clickOnToSeeHours1() throws Exception
+	{
+		try 
+		{
+			uiDriver.findElement(ClickToseeHour1).click();
+		} catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE CLICKING ON TO SEE HOURS1 LINK " + "\n clickOnToSeeHours1" + e.getLocalizedMessage());
+		}
+		return new AccountSummaryNewpage(uiDriver);
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public void getHours1List() throws Exception
+	{
+		try
+		{
+			List<WebElement> hrlist1= uiDriver.findElements(listofhrs1_xpath);
+				
+			for (WebElement list1 : hrlist1) 
+			{
+				System.out.println(list1.getText());
+				Ref_value=list1.getText();
+				ExcelutilObject.writeDataToExcel("Nanda", 1, 2, Ref_value, NKConstants.Path_Write_TestData);
+			}
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE GETTING THE LIST DETAILS OF HOURS1" + "\n getHours1List" + e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	public boolean verifyClickonHourTwo() throws Exception
+	{
+		Log.info("Verifying the Click on Hours 2nd  link is displyed on the Page");
+		try 
+		{
+			flag=isElementPresent(ClickToSeeHours2);
+			Assert.assertTrue(flag, "Click Hours 2  Element Is Missing on the sreen");
+			return flag;
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE VERIFYING THE CLICK ON HOURS 2 LINK MESSAGE LABEL " + " \n verifyClickonHourTwo "+ e.getLocalizedMessage() );
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public AccountSummaryNewpage clickOnToSeeHours2() throws Exception
+	{
+		try 
+		{
+			uiDriver.findElement(ClickToSeeHours2).click();
+		} catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE CLICKING ON TO SEE HOURS2 LINK " + "\n clickOnToSeeHours2" + e.getLocalizedMessage());
+		}
+		return new AccountSummaryNewpage(uiDriver);
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public void getHours2List() throws Exception
+	{
+		try
+		{
+			List<WebElement> HoursList2= uiDriver.findElements(listofhrs2_xpath);
+				
+			for (WebElement list2 : HoursList2) 
+			{
+				System.out.println(list2.getText());
+				Ref_value=list2.getText();
+				ExcelutilObject.writeDataToExcel("Hour2", 1, 2, Ref_value, NKConstants.Path_Write_TestData);
+			}
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE GETTING THE LIST DETAILS OF HOURS2" + "\n getHours2List" + e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	public boolean verifyClickonHourThree() throws Exception
+	{
+		Log.info("Verifying the Click on Hours 3nd  link is displyed on the Page");
+		try 
+		{
+			flag=isElementPresent(ClickToseeHours3);
+			Assert.assertTrue(flag, "Click Hours 3  Element Is Missing on the sreen");
+			return flag;
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE VERIFYING THE CLICK ON HOURS 3 LINK MESSAGE LABEL " + " \n verifyClickonHourThree "+ e.getLocalizedMessage() );
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public AccountSummaryNewpage clickOnToSeeHours3() throws Exception
+	{
+		try 
+		{
+			uiDriver.findElement(ClickToseeHours3).click();
+		} catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE CLICKING ON TO SEE HOURS3 LINK " + "\n clickOnToSeeHours3" + e.getLocalizedMessage());
+		}
+		return new AccountSummaryNewpage(uiDriver);
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	
+	public void getHours3List() throws Exception
+	{
+		try
+		{
+			List<WebElement> HoursList3= uiDriver.findElements(listofhrs3_xpath);
+				
+			for (WebElement list3 : HoursList3) 
+			{
+				System.out.println(list3.getText());
+				Ref_value=list3.getText();
+				ExcelutilObject.writeDataToExcel("Hour3", 1, 2, Ref_value, NKConstants.Path_Write_TestData);
+			}
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE GETTING THE LIST DETAILS OF HOURS3" + "\n getHours3List" + e.getLocalizedMessage());
+		}
+	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	
+	public void MovetoSchedule() throws Exception
+	{
+		Log.info("Moving to Schedule  Menu" );
+		try {
+			
+			mouseover(ScheduleMenu);
+					
+		} catch (Exception e) {
+			Log.info("I am not able to move to Schedule  Menu" );
+			throw new Exception("FAILED WHILE MOVING  to THE Schedule  MENU "  + "\n MovetoSchedule"+e.getLocalizedMessage());
+		}
+	}
+	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public boolean verifyRequestAppointment() throws Exception
+	{
+		Log.info("Verification of Request appointment");
+		try 
+		{
+			flag=isElementPresent(RequestAppt);
+			Assert.assertTrue(flag, "Request Appoointment is not  displayed");
+			return flag;
+		} 
+		catch (Exception e)
+		{
+		throw new Exception("FAILED WHILE VERIFYING THE Request Appointment"+ "\n verifyRequestAppointment"+e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public boolean verifyMyAppointments() throws Exception
+	{
+		Log.info("Verification of My Appointments ");
+		try 
+		{
+			flag=isElementPresent(MyAppts);
+			Assert.assertTrue(flag, "My appointments is not  displayed");
+			return flag;
+		} 
+		catch (Exception e)
+		{
+		throw new Exception("FAILED WHILE VERIFYING THE MY APPOINTMENTS "+ "\n verifyMyAppointments"+e.getLocalizedMessage());
+		}
+	}
+	/**********************************************************************************************************************************************************************************************/	
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public GenericAppointmentRequestPage clickOnRequestforAppointment() throws Exception
+	{
+		Log.info("Clicking on clickOnRequestforAppointment menu");
+		
+		try {
+			
+			mouseoverAndClick(RequestAppt);
+				} 
+		catch (Exception e)
+		{
+			throw new Exception("FAILED WHILE CLICKING ON THE REQUEST APPOINTMENT MENU " +"\n clickOnRequestforAppointment" + e.getLocalizedMessage());
+		}
+		return new GenericAppointmentRequestPage(uiDriver);
+	}
+	
+	
+	/**********************************************************************************************************************************************************************************************/
+	
+	
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether Welcome  message is displayed on page.
+	 */
+	public MyAppointmentsPage clickOnMyAppointments() throws Exception
+	{
+		Log.info("Clicking on clickOnMyAppointments menu");
+		
+		try {
+			
+			mouseoverAndClick(MyAppts);
+				} 
+		catch (Exception e)
+		{
+			throw new Exception("FAILED WHILE CLICKING ON THE MY APPOINTMENTS " +"\n clickOnMyAppointments" + e.getLocalizedMessage());
+		}
+		return new MyAppointmentsPage(uiDriver);
+	}
+	
+	
+	/**********************************************************************************************************************************************************************************************/	
 }

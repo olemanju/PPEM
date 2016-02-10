@@ -7,8 +7,10 @@ import org.testng.annotations.Test;
 import com.pp.common.NKConstants;
 import com.pp.pages.AccountSummaryNewpage;
 import com.pp.pages.ComposeMessagePage;
+import com.pp.pages.GenericAppointmentRequestPage;
 import com.pp.pages.InboxPage;
 import com.pp.pages.LoginPage;
+import com.pp.pages.MyAppointmentsPage;
 import com.pp.pages.OutboxPage;
 import com.pp.pages.RequestSubmitted1Page;
 import com.pp.pages.SecurityQuestion;
@@ -34,6 +36,8 @@ public class AccountSummaryTest  extends BaseTestObject
 	RequestSubmitted1Page objRequestSubmitted1Page;
 	InboxPage objInboxPage;
 	OutboxPage objoutboxPage;
+	GenericAppointmentRequestPage objGenericAppointmentRequestPage;
+	MyAppointmentsPage objMyAppointmentsPage;
 	
 	
 	boolean flag;
@@ -98,7 +102,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		}
 		}
 
-	@Test(priority=2, enabled=false)
+	@Test(priority=2, enabled=true)
 	public void verifyMailMenuSentItems() throws Exception
 	{
 		
@@ -262,10 +266,12 @@ public class AccountSummaryTest  extends BaseTestObject
 		
 		objAccountSummaryNew.verifyViewProfileLink();
 		objAccountSummaryNew.clickonViewProfileLink();
-		
-		
+		objAccountSummaryNew.getTextofPracticeName();
+		objAccountSummaryNew.ClickonCloseButton();
 		objAccountSummaryNew.verifySignOutButton();
+		Thread.sleep(4000);
 		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
+		Thread.sleep(4000);
 		objSurveyOptInPage.verifyDecideLaterbutton();
 		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
 		objLoginPage.compareSighOutMessage();
@@ -276,9 +282,130 @@ public class AccountSummaryTest  extends BaseTestObject
 			throw new Exception("FAILED THE TEST CASE OF CLICK ON VIEW PROFILE LINK" + "\n CheckwithViewProfile " +e.getLocalizedMessage());
 		}
 		}
+	
+	@Test(priority=5, enabled=true)
+	public void CheckwithViewProfileAndGettheSlots() throws Exception
+	{
+		
+		try 
+		{
+			objLoginPage = new LoginPage(uiDriver);
+			objLoginPage.verifyUsernameLabel();
+			objLoginPage.verifyPasswordlabel();
+			objLoginPage.verifyUsernameTextbox();
+			
+			String Username=getExcelTest(1, 1);
+			System.out.println(Username);
+			objLoginPage.enterUsername(Username);
+			
+			String Password=getExcelTest(1, 2);
+			System.out.println(Password);
+			objLoginPage.enterPassword(Password);
+			
+			
+			objSecurityQuestion	=objLoginPage.clickOnLoginButton();
+			objSecurityQuestion.verifyFruadWarning();
+			objSecurityQuestion.verifyFavTeachernameTextbox();
+			
+			String FavText=getExcelTest(1, 3);
+			System.out.println(FavText);
+			objSecurityQuestion.EnterFavTextbox(FavText);
+			
+		objAccountSummaryNew=	objSecurityQuestion.clickOnSubmitButton();
+		objAccountSummaryNew.verifyDashBoardMessage();
+		objAccountSummaryNew.verifyWelcomeMessage();
+		
+		objAccountSummaryNew.verifyViewProfileLink();
+		objAccountSummaryNew.clickonViewProfileLink();
+		objAccountSummaryNew.getTextofPracticeName();
+		objAccountSummaryNew.verifyClickonHourone();
+		objAccountSummaryNew.clickOnToSeeHours1();
+		Thread.sleep(3000);
+		objAccountSummaryNew.getHours1List();	
+		
+		objAccountSummaryNew.verifyClickonHourTwo();
+		objAccountSummaryNew.clickOnToSeeHours2();
+		objAccountSummaryNew.getHours2List();
+		
+		objAccountSummaryNew.verifyClickonHourThree();
+		objAccountSummaryNew.clickOnToSeeHours3();
+		//objAccountSummaryNew.getHours3List();
+		
+		objAccountSummaryNew.ClickonCloseButton();
+		objAccountSummaryNew.verifySignOutButton();
+		Thread.sleep(4000);
+		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
+		Thread.sleep(4000);
+		objSurveyOptInPage.verifyDecideLaterbutton();
+		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
+		objLoginPage.compareSighOutMessage();
+		
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED THE TEST CASE OF CLICK ON VIEW PROFILE LINK" + "\n CheckwithViewProfile " +e.getLocalizedMessage());
+		}
+		}
+	
+	@Test(priority=6, enabled=true)
+	public void verifyScheduleMenu() throws Exception
+	{
+		
+		try 
+		{
+			objLoginPage = new LoginPage(uiDriver);
+			objLoginPage.verifyUsernameLabel();
+			objLoginPage.verifyPasswordlabel();
+			objLoginPage.verifyUsernameTextbox();
+			
+			String Username=getExcelTest(1, 1);
+			System.out.println(Username);
+			objLoginPage.enterUsername(Username);
+			
+			String Password=getExcelTest(1, 2);
+			System.out.println(Password);
+			objLoginPage.enterPassword(Password);
+			
+			
+			objSecurityQuestion	=objLoginPage.clickOnLoginButton();
+			objSecurityQuestion.verifyFruadWarning();
+			objSecurityQuestion.verifyFavTeachernameTextbox();
+			
+			String FavText=getExcelTest(1, 3);
+			System.out.println(FavText);
+			objSecurityQuestion.EnterFavTextbox(FavText);
+			
+		objAccountSummaryNew=	objSecurityQuestion.clickOnSubmitButton();
+		objAccountSummaryNew.verifyDashBoardMessage();
+		objAccountSummaryNew.verifyWelcomeMessage();
+		objAccountSummaryNew.MovetoSchedule();
+		String parent=objAccountSummaryNew.Parentwindow();
+	    System.out.println(parent);
+//		objAccountSummaryNew.verifySentItem();
+		objGenericAppointmentRequestPage=objAccountSummaryNew.clickOnRequestforAppointment();
+		
+		Thread.sleep(5000);
+		objAccountSummaryNew=objGenericAppointmentRequestPage.clickOnHomeButtonOnGenericApptRequest();
+		objAccountSummaryNew.MovetoSchedule();
+		objMyAppointmentsPage=objAccountSummaryNew.clickOnMyAppointments();
+		
+		Thread.sleep(5000);
+		
+		objAccountSummaryNew.verifySignOutButton();
+		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
+		objSurveyOptInPage.verifyDecideLaterbutton();
+		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
+		objLoginPage.compareSighOutMessage();
+		}
+		catch (Exception e)
+		{
+			throw new Exception(" Verify Mail Menu Test case Failed" +e.getLocalizedMessage());
+		}
+		}
 	public String getExcelTest(int row,int column) throws Exception
 	{
 		ExcelutilObject.setExcelFile(NKConstants.Path_TestData, "Login");
 		return ExcelutilObject.getCellData(row, column);
 }
+	
 }

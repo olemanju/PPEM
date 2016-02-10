@@ -265,9 +265,4 @@ ExcelutilObject.setExcelFile(NKConstants.Path_TestData, "InvalidLoginDetails");
 return ExcelutilObject.getCellData(row, column);
 }
 
-
-
-
-
-
 }
