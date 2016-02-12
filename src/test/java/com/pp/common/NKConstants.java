@@ -24,12 +24,19 @@ public interface NKConstants {
 	String EnrollPage_radio_text2="I have a temporary username and password";
 	String SignoutSuccessMessage="You have successfully logged out of Patient Portal.";
 	
+	
 	/*************************************************** ComposeEmailPage*****************************************************************************/
 	
 	String selectMessageCategoryText="Select Message Category and Recipient";
 	
 	/********************************************************RequestSubmitted***************************************************************************/
 	String ConfrmationMessageSent="Your message has been successfully sent.";
+	
+	/*************************************************** ComposeEmailPage*****************************************************************************/
+	
+	String AppointmentSentConfirmationText="Your appointment request has been successfully submitted.";
+	
+	/********************************************************RequestSubmitted***************************************************************************/
 	/********************************************************************************************************/
     String SKILL = "selenium";
     String LOCATION = "bangalore";
