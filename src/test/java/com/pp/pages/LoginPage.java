@@ -43,6 +43,8 @@ public class LoginPage extends BasePageObject
 	By warningResetUsernamePassword=By.id("ctl00_ContentPlaceHolder1_Login2_lnkNeedHelp");
 	By sighoutMessage=By.id("ctl00_ContentPlaceHolder1_lblSessionExpire");
 	
+	By nanda=By.id("Nanda");
+	
 	
 	
 	
