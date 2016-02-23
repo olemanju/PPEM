@@ -154,6 +154,7 @@ By MyAppts=By.id("ctl00_ucHeader_scheduleRepeater_ctl01_lnkSubMenuItem");
 		Log.info("Clicking on Signout button");
 		try
 		{
+			waitForAnElement(SignOutButton, 20);
 			uiDriver.findElement(SignOutButton).click();
 		}
 		catch (Exception e) 

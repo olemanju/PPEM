@@ -2,6 +2,8 @@ package com.pp.tests;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.net.EphemeralPortRangeDetector;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import com.pp.common.NKConstants;
@@ -269,9 +271,7 @@ public class AccountSummaryTest  extends BaseTestObject
 		objAccountSummaryNew.clickonViewProfileLink();
 		objAccountSummaryNew.getTextofPracticeName();
 		objAccountSummaryNew.ClickonCloseButton();
-		Thread.sleep(4000);
 		objAccountSummaryNew.verifySignOutButton();
-		Thread.sleep(4000);
 		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
 		Thread.sleep(4000);
 		objSurveyOptInPage.verifyDecideLaterbutton();
