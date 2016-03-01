@@ -28,7 +28,9 @@ public class BasePageObject {
 
 	//protected static WebDriver uiDriver;
 	public WebDriver uiDriver;
-	public BasePageObject(WebDriver driver){
+	
+	public BasePageObject(WebDriver driver)
+	{
 	this.uiDriver = driver;	
 	//Sample test Viju
 	}
