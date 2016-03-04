@@ -216,11 +216,11 @@ public void clickOnLoginWithValidCredentials() throws Exception
 		objLoginPage.verifyPasswordlabel();
 		objLoginPage.verifyUsernameTextbox();
 		
-		String Username=getExcelTest(1, 1);
+		String Username=getExcelTest(2, 1);
 		System.out.println(Username);
 		objLoginPage.enterUsername(Username);
 		
-		String Password=getExcelTest(1, 2);
+		String Password=getExcelTest(2, 2);
 		System.out.println(Password);
 		objLoginPage.enterPassword(Password);
 		
@@ -229,7 +229,7 @@ public void clickOnLoginWithValidCredentials() throws Exception
 		objSecurityQuestion.verifyFruadWarning();
 		objSecurityQuestion.verifyFavTeachernameTextbox();
 		
-		String FavText=getExcelTest(1, 3);
+		String FavText=getExcelTest(2, 3);
 		System.out.println(FavText);
 		objSecurityQuestion.EnterFavTextbox(FavText);
 		
