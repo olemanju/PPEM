@@ -26,6 +26,7 @@ public class ComposeMessagePage extends BasePageObject
 	By selectpracticeandpatientlabel=By.id("ctl00_ContentPlaceHolder1_lblPracticeToRenewMedHeader");
 	By Practicelabel=By.id("ctl00_ContentPlaceHolder1_PracticePersonSelector1_lblPracticeCaption");
 	By Practicedropdown=By.id("ctl00_ContentPlaceHolder1_PracticePersonSelector1_ddlPractices");
+	By BehalfDrop=By.id("ctl00_ContentPlaceHolder1_PracticePersonSelector1_ddlPersons");
 	By selectMessageCategoryandRecipient=By.id("ctl00_ContentPlaceHolder1_Label2");
 	By instructionMessageLabel=By.id("ctl00_ContentPlaceHolder1_lblInstructions");
 	By categorylabel=By.id("ctl00_ContentPlaceHolder1_OnlineCommunicationNavigator1_lblCategoryCaption");
@@ -133,6 +134,28 @@ public class ComposeMessagePage extends BasePageObject
 		}
 	}
 	
+	/**********************************************************************************************************************************************************************************************/
+	/**
+	 * @author manjunathr
+	 * @return flag
+	 * @throws Exception
+	 * This method will check whether DashBoard message is displayed on page.
+	 */
+	public void selectSendBehalfOfDropdown(String SelecDrop) throws Exception
+	{
+		Log.info("Verification of Practice dropdown");
+		
+		try
+		{
+		//selectDropDown(Practicedropdown, "7c46a640-d4f4-4987-bbc1-cfd0c446b552");
+			
+			new Select(uiDriver.findElement(BehalfDrop)).selectByValue(SelecDrop);
+		} 
+		catch (Exception e) 
+		{
+			throw new Exception("FAILED WHILE SELECTING THE PRACTICE DROPDOWN" +"\n selectPracticeDropdown" + e.getLocalizedMessage());
+		}
+	}
 	/**********************************************************************************************************************************************************************************************/
 	/**
 	 * @author manjunathr

@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Page Object test example]">
+<suite thread-count="2" name="Failed suite [Page Object test example]">
   <test name="Regression 1(failed)">
     <classes>
       <class name="com.pp.tests.ComposeMessageTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="setup"/>
+          <include name="LoginAndClickonComposeMessage"/>
         </methods>
       </class> <!-- com.pp.tests.ComposeMessageTest -->
+      <class name="com.pp.tests.GenericAppointmentRequestTest">
+        <methods>
+          <include name="LoginAndRequestForAppointment"/>
+        </methods>
+      </class> <!-- com.pp.tests.GenericAppointmentRequestTest -->
       <class name="com.pp.tests.AccountSummaryTest">
         <methods>
-          <include name="tearDown"/>
+          <include name="verifyScheduleMenu"/>
+          <include name="CheckwithViewProfileAndGettheSlots"/>
           <include name="verifyMailMenuComposeMessage"/>
-          <include name="setup"/>
+          <include name="verifyMailMenuOptions"/>
           <include name="CheckwithViewProfile"/>
           <include name="verifyMailMenuSentItems"/>
         </methods>
       </class> <!-- com.pp.tests.AccountSummaryTest -->
       <class name="com.pp.tests.LoginPageTest">
         <methods>
-          <include name="tearDown"/>
+          <include name="clickOnNeedHelpWithyourUsernamePassLink"/>
+          <include name="verifyIamNewHereTestCase"/>
           <include name="setup"/>
+          <include name="verifyAllReadyMembersElements"/>
+          <include name="clickOnLoginWithValidCredentials"/>
+          <include name="clickOnLoginWithInvalidUsernameAndPassword"/>
         </methods>
       </class> <!-- com.pp.tests.LoginPageTest -->
     </classes>

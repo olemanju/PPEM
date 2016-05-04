@@ -76,6 +76,8 @@ private static Logger Log= Logger.getLogger(Logger.class.getName());
 		objComposeMessagePage.practiceLabel();
 		objComposeMessagePage.selectPracticeDropdown("7c46a640-d4f4-4987-bbc1-cfd0c446b552");
 		Thread.sleep(2000);
+		objComposeMessagePage.selectSendBehalfOfDropdown("a7026e04-2845-4ab4-946f-490a47c97b8a");
+		Thread.sleep(2000);
 		objComposeMessagePage.verifyCategoryElement();
 		objComposeMessagePage.verifyCategoryDropdown();
 		objComposeMessagePage.selectValueFromCategoryDropdown("Private questions (for only a doctor)");
@@ -91,11 +93,11 @@ private static Logger Log= Logger.getLogger(Logger.class.getName());
 		
 		
 		objAccountSummaryNew.verifySignOutButton();
-		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
-		objSurveyOptInPage.verifyDecideLaterbutton();
+		objLoginPage=objAccountSummaryNew.clickOnSignOutButton();
+		/*objSurveyOptInPage.verifyDecideLaterbutton();
 		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
 		objLoginPage.compareSighOutMessage();
-		
+		*/
 		
 		
 			

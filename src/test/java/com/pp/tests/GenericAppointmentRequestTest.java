@@ -81,15 +81,15 @@ private static Logger Log= Logger.getLogger(Logger.class.getName());
 		objAccountSummaryNew=	objSecurityQuestion.clickOnSubmitButton();
 		objAccountSummaryNew.MovetoSchedule();
 		objGenericAppointmentRequestPage=objAccountSummaryNew.clickOnRequestforAppointment();
-		//Thread.sleep(1000);
-	
+			
 		objGenericAppointmentRequestPage.selectPracticeDropdown("cc9821c7-f6bf-42c5-8178-18b73ec8d02a");
+		Thread.sleep(1000);
+		objGenericAppointmentRequestPage.selectPatientDropdown("7e473d74-7310-433b-b42b-2c17ca917662");
 		Thread.sleep(1000);
 		objGenericAppointmentRequestPage.selectProviderDropdown("b73a66c2-52e1-48e1-9698-4729ccfe4cb1");
 		Thread.sleep(1000);
 		objGenericAppointmentRequestPage.selectCategoryDropdown("9569c583-f127-4a27-afc2-0c8e3f67ed4a");
 		Thread.sleep(1000);
-		
 		objGenericAppointmentRequestPage.selectLocationDropdown("40749c87-c7d9-4cf6-92e7-eda513f7ecd1");
 		Thread.sleep(1000);
 		
@@ -101,8 +101,21 @@ private static Logger Log= Logger.getLogger(Logger.class.getName());
 		objGenericAppointmentRequestPage.selectMakeAppointmentForDropdown("1");
 		Thread.sleep(1000);
 	
-		objGenericAppointmentRequestPage.EnterStartDate();
-		objGenericAppointmentRequestPage.EnterEndDate();
+		
+		String DateVa=getExcelMonth(27, 2);
+		System.out.println(DateVa + "DateValue");
+		//objGenericAppointmentRequestPage.EnterStartDate(datevalue, monthval);
+		
+		String monthva=getExcelMonth(3, 2);
+		System.out.println(monthva + " Month");
+		objGenericAppointmentRequestPage.EnterStartDate(DateVa, monthva);
+		
+		String EndDateVa=getExcelGetDatet(20, 0);
+		System.out.println(EndDateVa + "Value");
+		
+		String Endmonthva=getExcelMonth(3, 4);
+		System.out.println(Endmonthva + " Month");
+		objGenericAppointmentRequestPage.EnterEndDate(EndDateVa, Endmonthva);
 		
 		objGenericAppointmentRequestPage.selectPreferredTimeFrom("11:00 AM");
 		Thread.sleep(1000);
@@ -115,14 +128,14 @@ private static Logger Log= Logger.getLogger(Logger.class.getName());
 		objAppointmentRenewalSubmittedPage.CheckProperMessageGetDisplayedforAppitConfirmation();
 		
 		objAccountSummaryNew.verifySignOutButton();
-		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
-		objSurveyOptInPage.verifyDecideLaterbutton();
+		objLoginPage=objAccountSummaryNew.clickOnSignOutButton();
+	/*	objSurveyOptInPage.verifyDecideLaterbutton();
 		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
-		objLoginPage.compareSighOutMessage();
+		objLoginPage.compareSighOutMessage();*/
 		} 
 		catch (Exception e) 
 		{
-			throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithValidCredentials" +e.getLocalizedMessage());
+			throw new Exception("FAILED THE TEST CASE OF CLICK ON LOGIN BUTTON" + "\n clickOnLoginWithValidCredentials  " +e.getLocalizedMessage());
 		}
 		}
 	
@@ -131,4 +144,15 @@ private static Logger Log= Logger.getLogger(Logger.class.getName());
 		ExcelutilObject.setExcelFile(NKConstants.Path_TestData, "Login");
 		return ExcelutilObject.getCellData(row, column);
 }
+	
+	public String getExcelGetDatet(int row,int column) throws Exception
+	{
+		ExcelutilObject.setExcelFile(NKConstants.Path_TestData, "DateSelect");
+		return ExcelutilObject.getCellData(row, column);
+}
+	public String getExcelMonth(int row, int column) throws Exception
+	{
+		ExcelutilObject.setExcelFile(NKConstants.Path_TestData, "ApptStartDate");
+		return ExcelutilObject.getCellData(row, column);
+	}
 }

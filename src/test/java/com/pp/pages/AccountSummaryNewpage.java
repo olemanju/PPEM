@@ -1,6 +1,7 @@
 package com.pp.pages;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -22,6 +23,7 @@ public class AccountSummaryNewpage extends BasePageObject
 	{
 		super(driver);
 	}
+	
 	private static Logger Log = Logger.getLogger(Logger.class.getName());
 	
 	By DashBoardMessage= By.id("ctl00_ContentPlaceHolder1_lblAccSumHeadTxt");
@@ -92,7 +94,7 @@ By MyAppts=By.id("ctl00_ucHeader_scheduleRepeater_ctl01_lnkSubMenuItem");
 			Assert.assertTrue(flag, "DashBoardmessage Element Is Missing on the sreen");
 			return flag;
 		} 
-		catch (Exception e) 
+		catch (NoSuchElementException e) 
 		{
 			throw new Exception("FAILED WHILE VERIFYING THE DASHBOARD MESSAGE LABEL " + " \nverifyDashBoardMessage "+ e.getLocalizedMessage() );
 		}
@@ -149,7 +151,7 @@ By MyAppts=By.id("ctl00_ucHeader_scheduleRepeater_ctl01_lnkSubMenuItem");
 	 * This method will check whether Welcome  message is displayed on page.
 	 */
 	
-	public SurveyOptInPage clickOnSignOutButton() throws Exception
+	public LoginPage clickOnSignOutButton() throws Exception
 	{
 		Log.info("Clicking on Signout button");
 		try
@@ -161,7 +163,7 @@ By MyAppts=By.id("ctl00_ucHeader_scheduleRepeater_ctl01_lnkSubMenuItem");
 		{
 			throw new Exception("FAILED WHILE CLICKING SIGN OUT BUTTON" +"\n clickOnSignOutButton " +e.getLocalizedMessage());
 		}
-		return new SurveyOptInPage(uiDriver);
+		return new LoginPage(uiDriver);
 		
 	}
 	/**********************************************************************************************************************************************************************************************/

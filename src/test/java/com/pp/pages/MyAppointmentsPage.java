@@ -14,4 +14,7 @@ public class MyAppointmentsPage extends BasePageObject
 		
 	}
 	public static Logger Log= Logger.getLogger(Logger.class.getName());
+	
+	
+	
 }

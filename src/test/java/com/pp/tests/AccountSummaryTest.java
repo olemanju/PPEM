@@ -93,9 +93,10 @@ public class AccountSummaryTest  extends BaseTestObject
 		objAccountSummaryNew=objInboxPage.clickOnHomeButton();
 		Thread.sleep(5000);
 		objAccountSummaryNew.verifySignOutButton();
-		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
-		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
-		objLoginPage.compareSighOutMessage();
+		objLoginPage=objAccountSummaryNew.clickOnSignOutButton();
+		
+		/*objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
+		objLoginPage.compareSighOutMessage();*/
 		
 		
 		}
@@ -149,10 +150,10 @@ public class AccountSummaryTest  extends BaseTestObject
 
 		Thread.sleep(5000);
 		objAccountSummaryNew.verifySignOutButton();
-		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
-		objSurveyOptInPage.verifyDecideLaterbutton();
+		objLoginPage=objAccountSummaryNew.clickOnSignOutButton();
+		/*objSurveyOptInPage.verifyDecideLaterbutton();
 		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
-		objLoginPage.compareSighOutMessage();
+		objLoginPage.compareSighOutMessage();*/
 		
 		}
 		catch (Exception e)
@@ -203,6 +204,10 @@ public class AccountSummaryTest  extends BaseTestObject
 		objComposeMessagePage.practiceLabel();
 		objComposeMessagePage.selectPracticeDropdown("7c46a640-d4f4-4987-bbc1-cfd0c446b552");
 		Thread.sleep(2000);
+		objComposeMessagePage.selectSendBehalfOfDropdown("a7026e04-2845-4ab4-946f-490a47c97b8a");
+	//	objComposeMessagePage.selectPracticeDropdown("2a4a4e94-dce2-4e14-8b68-d8d3085c0501");
+		
+		Thread.sleep(2000);
 		objComposeMessagePage.verifyCategoryElement();
 		objComposeMessagePage.verifyCategoryDropdown();
 		objComposeMessagePage.selectValueFromCategoryDropdown("Private questions (for only a doctor)");
@@ -223,10 +228,10 @@ public class AccountSummaryTest  extends BaseTestObject
 		
 		Thread.sleep(3000);
 		objAccountSummaryNew.verifySignOutButton();
-		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
-		objSurveyOptInPage.verifyDecideLaterbutton();
+		objLoginPage=objAccountSummaryNew.clickOnSignOutButton();
+		/*objSurveyOptInPage.verifyDecideLaterbutton();
 		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
-		objLoginPage.compareSighOutMessage();
+		objLoginPage.compareSighOutMessage();*/
 		
 		}
 		catch (Exception e)
@@ -272,11 +277,11 @@ public class AccountSummaryTest  extends BaseTestObject
 		objAccountSummaryNew.getTextofPracticeName();
 		objAccountSummaryNew.ClickonCloseButton();
 		objAccountSummaryNew.verifySignOutButton();
-		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
-		Thread.sleep(4000);
-		objSurveyOptInPage.verifyDecideLaterbutton();
+		objLoginPage=objAccountSummaryNew.clickOnSignOutButton();
+		//Thread.sleep(4000);
+	/*	objSurveyOptInPage.verifyDecideLaterbutton();
 		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
-		objLoginPage.compareSighOutMessage();
+		objLoginPage.compareSighOutMessage();*/
 		
 		} 
 		catch (Exception e) 
@@ -336,11 +341,11 @@ public class AccountSummaryTest  extends BaseTestObject
 		objAccountSummaryNew.ClickonCloseButton();
 		objAccountSummaryNew.verifySignOutButton();
 		Thread.sleep(4000);
-		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
-		Thread.sleep(4000);
+		objLoginPage=objAccountSummaryNew.clickOnSignOutButton();
+		/*Thread.sleep(4000);
 		objSurveyOptInPage.verifyDecideLaterbutton();
 		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
-		objLoginPage.compareSighOutMessage();
+		objLoginPage.compareSighOutMessage();*/
 		
 		} 
 		catch (Exception e) 
@@ -394,10 +399,10 @@ public class AccountSummaryTest  extends BaseTestObject
 		Thread.sleep(5000);
 		
 		objAccountSummaryNew.verifySignOutButton();
-		objSurveyOptInPage=objAccountSummaryNew.clickOnSignOutButton();
-		objSurveyOptInPage.verifyDecideLaterbutton();
+		objLoginPage=objAccountSummaryNew.clickOnSignOutButton();
+	/*	objSurveyOptInPage.verifyDecideLaterbutton();
 		objLoginPage=objSurveyOptInPage.clickOnIwillDecideLaterButton();
-		objLoginPage.compareSighOutMessage();
+		objLoginPage.compareSighOutMessage();*/
 		}
 		catch (Exception e)
 		{
