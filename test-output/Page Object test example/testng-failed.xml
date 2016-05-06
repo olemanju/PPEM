@@ -5,32 +5,30 @@
     <classes>
       <class name="com.pp.tests.ComposeMessageTest">
         <methods>
-          <include name="LoginAndClickonComposeMessage"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- com.pp.tests.ComposeMessageTest -->
       <class name="com.pp.tests.GenericAppointmentRequestTest">
         <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
           <include name="LoginAndRequestForAppointment"/>
         </methods>
       </class> <!-- com.pp.tests.GenericAppointmentRequestTest -->
       <class name="com.pp.tests.AccountSummaryTest">
         <methods>
           <include name="verifyScheduleMenu"/>
+          <include name="tearDown"/>
           <include name="CheckwithViewProfileAndGettheSlots"/>
-          <include name="verifyMailMenuComposeMessage"/>
-          <include name="verifyMailMenuOptions"/>
+          <include name="setup"/>
           <include name="CheckwithViewProfile"/>
-          <include name="verifyMailMenuSentItems"/>
         </methods>
       </class> <!-- com.pp.tests.AccountSummaryTest -->
       <class name="com.pp.tests.LoginPageTest">
         <methods>
-          <include name="clickOnNeedHelpWithyourUsernamePassLink"/>
-          <include name="verifyIamNewHereTestCase"/>
+          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="verifyAllReadyMembersElements"/>
-          <include name="clickOnLoginWithValidCredentials"/>
-          <include name="clickOnLoginWithInvalidUsernameAndPassword"/>
         </methods>
       </class> <!-- com.pp.tests.LoginPageTest -->
     </classes>

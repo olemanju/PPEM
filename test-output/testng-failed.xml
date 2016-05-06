@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite thread-count="2" name="Failed suite [Page Object test example]">
+  <test name="Regression 1(failed)">
     <classes>
+      <class name="com.pp.tests.ComposeMessageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.pp.tests.ComposeMessageTest -->
       <class name="com.pp.tests.GenericAppointmentRequestTest">
         <methods>
           <include name="tearDown"/>
@@ -10,6 +16,21 @@
           <include name="LoginAndRequestForAppointment"/>
         </methods>
       </class> <!-- com.pp.tests.GenericAppointmentRequestTest -->
+      <class name="com.pp.tests.AccountSummaryTest">
+        <methods>
+          <include name="verifyScheduleMenu"/>
+          <include name="tearDown"/>
+          <include name="CheckwithViewProfileAndGettheSlots"/>
+          <include name="setup"/>
+          <include name="CheckwithViewProfile"/>
+        </methods>
+      </class> <!-- com.pp.tests.AccountSummaryTest -->
+      <class name="com.pp.tests.LoginPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.pp.tests.LoginPageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Regression 1(failed) -->
+</suite> <!-- Failed suite [Page Object test example] -->
