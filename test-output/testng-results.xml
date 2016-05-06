@@ -1,25 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="13" passed="13">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="53076" started-at="2016-05-06T10:11:23Z" finished-at="2016-05-06T10:12:16Z">
+  <suite name="Page Object test example" duration-ms="384556" started-at="2016-05-06T10:12:42Z" finished-at="2016-05-06T10:19:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="53076" started-at="2016-05-06T10:11:23Z" finished-at="2016-05-06T10:12:16Z">
-      <class name="com.pp.tests.GenericAppointmentRequestTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.GenericAppointmentRequestTest@7c30a502]" name="setup" is-config="true" duration-ms="14384" started-at="2016-05-06T15:41:23Z" finished-at="2016-05-06T15:41:38Z">
+    <test name="Regression 1" duration-ms="384556" started-at="2016-05-06T10:12:42Z" finished-at="2016-05-06T10:19:07Z">
+      <class name="com.pp.tests.AccountSummaryTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.AccountSummaryTest@57829d67]" name="setup" is-config="true" duration-ms="15776" started-at="2016-05-06T15:43:37Z" finished-at="2016-05-06T15:43:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="LoginAndRequestForAppointment()[pri:0, instance:com.pp.tests.GenericAppointmentRequestTest@7c30a502]" name="LoginAndRequestForAppointment" duration-ms="38305" started-at="2016-05-06T15:41:38Z" finished-at="2016-05-06T15:42:16Z">
+        <test-method status="PASS" signature="verifyMailMenuOptions()[pri:0, instance:com.pp.tests.AccountSummaryTest@57829d67]" name="verifyMailMenuOptions" duration-ms="47532" started-at="2016-05-06T15:43:53Z" finished-at="2016-05-06T15:44:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMailMenuOptions -->
+        <test-method status="PASS" signature="verifyMailMenuSentItems()[pri:0, instance:com.pp.tests.AccountSummaryTest@57829d67]" name="verifyMailMenuSentItems" duration-ms="33122" started-at="2016-05-06T15:44:40Z" finished-at="2016-05-06T15:45:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMailMenuSentItems -->
+        <test-method status="PASS" signature="verifyMailMenuComposeMessage()[pri:0, instance:com.pp.tests.AccountSummaryTest@57829d67]" name="verifyMailMenuComposeMessage" duration-ms="44926" started-at="2016-05-06T15:45:13Z" finished-at="2016-05-06T15:45:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMailMenuComposeMessage -->
+        <test-method status="PASS" signature="CheckwithViewProfile()[pri:0, instance:com.pp.tests.AccountSummaryTest@57829d67]" name="CheckwithViewProfile" duration-ms="29166" started-at="2016-05-06T15:45:58Z" finished-at="2016-05-06T15:46:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckwithViewProfile -->
+        <test-method status="PASS" signature="CheckwithViewProfileAndGettheSlots()[pri:0, instance:com.pp.tests.AccountSummaryTest@57829d67]" name="CheckwithViewProfileAndGettheSlots" duration-ms="28220" started-at="2016-05-06T15:46:27Z" finished-at="2016-05-06T15:46:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckwithViewProfileAndGettheSlots -->
+        <test-method status="PASS" signature="verifyScheduleMenu()[pri:0, instance:com.pp.tests.AccountSummaryTest@57829d67]" name="verifyScheduleMenu" duration-ms="31822" started-at="2016-05-06T15:46:56Z" finished-at="2016-05-06T15:47:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyScheduleMenu -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.AccountSummaryTest@57829d67]" name="tearDown" is-config="true" duration-ms="351" started-at="2016-05-06T15:47:27Z" finished-at="2016-05-06T15:47:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.pp.tests.AccountSummaryTest -->
+      <class name="com.pp.tests.ComposeMessageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.ComposeMessageTest@43a25848]" name="setup" is-config="true" duration-ms="12119" started-at="2016-05-06T15:47:28Z" finished-at="2016-05-06T15:47:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="LoginAndClickonComposeMessage()[pri:0, instance:com.pp.tests.ComposeMessageTest@43a25848]" name="LoginAndClickonComposeMessage" duration-ms="29100" started-at="2016-05-06T15:47:40Z" finished-at="2016-05-06T15:48:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginAndClickonComposeMessage -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.ComposeMessageTest@43a25848]" name="tearDown" is-config="true" duration-ms="294" started-at="2016-05-06T15:48:09Z" finished-at="2016-05-06T15:48:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.pp.tests.ComposeMessageTest -->
+      <class name="com.pp.tests.GenericAppointmentRequestTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.GenericAppointmentRequestTest@30c7da1e]" name="setup" is-config="true" duration-ms="12610" started-at="2016-05-06T15:48:09Z" finished-at="2016-05-06T15:48:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="LoginAndRequestForAppointment()[pri:0, instance:com.pp.tests.GenericAppointmentRequestTest@30c7da1e]" name="LoginAndRequestForAppointment" duration-ms="44410" started-at="2016-05-06T15:48:22Z" finished-at="2016-05-06T15:49:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginAndRequestForAppointment -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.GenericAppointmentRequestTest@7c30a502]" name="tearDown" is-config="true" duration-ms="379" started-at="2016-05-06T15:42:16Z" finished-at="2016-05-06T15:42:16Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.GenericAppointmentRequestTest@30c7da1e]" name="tearDown" is-config="true" duration-ms="309" started-at="2016-05-06T15:49:06Z" finished-at="2016-05-06T15:49:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.pp.tests.GenericAppointmentRequestTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.pp.tests.LoginPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pp.tests.LoginPageTest@19dfb72a]" name="setup" is-config="true" duration-ms="13437" started-at="2016-05-06T15:42:42Z" finished-at="2016-05-06T15:42:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyIamNewHereTestCase()[pri:0, instance:com.pp.tests.LoginPageTest@19dfb72a]" name="verifyIamNewHereTestCase" duration-ms="2925" started-at="2016-05-06T15:42:55Z" finished-at="2016-05-06T15:42:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIamNewHereTestCase -->
+        <test-method status="PASS" signature="verifyAllReadyMembersElements()[pri:0, instance:com.pp.tests.LoginPageTest@19dfb72a]" name="verifyAllReadyMembersElements" duration-ms="51" started-at="2016-05-06T15:42:58Z" finished-at="2016-05-06T15:42:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllReadyMembersElements -->
+        <test-method status="PASS" signature="clickOnLoginWithInvalidUsernameAndPassword()[pri:0, instance:com.pp.tests.LoginPageTest@19dfb72a]" name="clickOnLoginWithInvalidUsernameAndPassword" duration-ms="10468" started-at="2016-05-06T15:42:58Z" finished-at="2016-05-06T15:43:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnLoginWithInvalidUsernameAndPassword -->
+        <test-method status="PASS" signature="clickOnNeedHelpWithyourUsernamePassLink()[pri:0, instance:com.pp.tests.LoginPageTest@19dfb72a]" name="clickOnNeedHelpWithyourUsernamePassLink" duration-ms="4221" started-at="2016-05-06T15:43:09Z" finished-at="2016-05-06T15:43:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnNeedHelpWithyourUsernamePassLink -->
+        <test-method status="PASS" signature="clickOnLoginWithValidCredentials()[pri:0, instance:com.pp.tests.LoginPageTest@19dfb72a]" name="clickOnLoginWithValidCredentials" duration-ms="23315" started-at="2016-05-06T15:43:13Z" finished-at="2016-05-06T15:43:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnLoginWithValidCredentials -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pp.tests.LoginPageTest@19dfb72a]" name="tearDown" is-config="true" duration-ms="366" started-at="2016-05-06T15:43:36Z" finished-at="2016-05-06T15:43:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.pp.tests.LoginPageTest -->
+    </test> <!-- Regression 1 -->
+  </suite> <!-- Page Object test example -->
 </testng-results>

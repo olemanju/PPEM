@@ -7,7 +7,7 @@
       <class name="com.pp.tests.LoginPageTest"/>
       <class name="com.pp.tests.AccountSummaryTest"/>
      <class name="com.pp.tests.ComposeMessageTest"/>
-     <class name="com.pp.tests.GenericAppointmentRequestTest"/>
+     
       
     </classes>
   </test>
