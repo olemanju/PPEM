@@ -270,12 +270,12 @@ public class GenericAppointmentRequestPage extends BasePageObject
 	 * This method will check whether DashBoard message is displayed on page.
 	 */
 	
-	public void EnterStartDate(String datevalue, String monthval) throws Exception
+	/*public void EnterStartDate(String datevalue, String monthval) throws Exception
 	{
 		Log.info("Clicking on EnterStartDate button");
 		
-		/*	public void enterDate(String datevalue, String monthval) throws Exception
-			{*/
+			public void enterDate(String datevalue, String monthval) throws Exception
+			{
 				
 				//div[@id='ctl00_ContentPlaceHolder1_CalExtStartDate_popupDiv']
 				//div[@id='ctl00_ContentPlaceHolder1_CalExtStartDate_popupDiv']/div[@id='ctl00_ContentPlaceHolder1_CalExtStartDate_body']//table[@id='ctl00_ContentPlaceHolder1_CalExtStartDate_daysTable']//td
@@ -357,7 +357,7 @@ public class GenericAppointmentRequestPage extends BasePageObject
 				
 		}
 			
-			/***************************************************//*
+			*//***************************************************//*
 			//uiDriver.findElement(startDateTable).click();
 			Thread.sleep(2000);
 			List<WebElement> Dates= uiDriver.findElements(By.xpath("//div[@id='ctl00_ContentPlaceHolder1_CalExtStartDate_popupDiv']/div[2]//table[@id='ctl00_ContentPlaceHolder1_CalExtStartDate_daysTable']/tbody/tr/td"));
@@ -381,16 +381,16 @@ public class GenericAppointmentRequestPage extends BasePageObject
 		{
 			throw new Exception("FAILED WHILE ENTERING START DATE " +"\n EnterStartDate" + e.getLocalizedMessage());
 		}
-		*/
+		
 	
 	
-	/**********************************************************************************************************************************************************************************************/
+	*//**********************************************************************************************************************************************************************************************//*
 	public void EnterEndDate(String enddatevalue, String endmonthval) throws Exception
 	{
 		Log.info("Clicking on EnterEndDate button");
 		
-		/*	public void enterDate(String datevalue, String monthval) throws Exception
-			{*/
+			public void enterDate(String datevalue, String monthval) throws Exception
+			{
 				
 				//div[@id='ctl00_ContentPlaceHolder1_CalExtStartDate_popupDiv']
 				//div[@id='ctl00_ContentPlaceHolder1_CalExtStartDate_popupDiv']/div[@id='ctl00_ContentPlaceHolder1_CalExtStartDate_body']//table[@id='ctl00_ContentPlaceHolder1_CalExtStartDate_daysTable']//td
@@ -468,7 +468,7 @@ public class GenericAppointmentRequestPage extends BasePageObject
 					
 				}
 				
-		}
+		}*/
 	/**********************************************************************************************************************************************************************************************/
 	/**
 	 * @author manjunathr
