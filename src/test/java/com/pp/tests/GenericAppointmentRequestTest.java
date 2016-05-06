@@ -84,8 +84,8 @@ private static Logger Log= Logger.getLogger(Logger.class.getName());
 			
 		objGenericAppointmentRequestPage.selectPracticeDropdown("cc9821c7-f6bf-42c5-8178-18b73ec8d02a");
 		Thread.sleep(1000);
-		objGenericAppointmentRequestPage.selectPatientDropdown("7e473d74-7310-433b-b42b-2c17ca917662");
-		Thread.sleep(1000);
+		//objGenericAppointmentRequestPage.selectPatientDropdown("7e473d74-7310-433b-b42b-2c17ca917662");
+		//Thread.sleep(1000);
 		objGenericAppointmentRequestPage.selectProviderDropdown("b73a66c2-52e1-48e1-9698-4729ccfe4cb1");
 		Thread.sleep(1000);
 		objGenericAppointmentRequestPage.selectCategoryDropdown("9569c583-f127-4a27-afc2-0c8e3f67ed4a");

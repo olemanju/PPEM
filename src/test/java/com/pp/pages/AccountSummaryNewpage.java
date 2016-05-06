@@ -28,7 +28,7 @@ public class AccountSummaryNewpage extends BasePageObject
 	
 	By DashBoardMessage= By.id("ctl00_ContentPlaceHolder1_lblAccSumHeadTxt");
 	By LoginMessage=By.id("ctl00_lblPatientName");
-	By SignOutButton= By.id("ctl00_SignOutButton");
+	By SignOutButton= By.partialLinkText("Log Out");
 	By PatientEducationLbl= By.id("ctl00_lblPatEduSearch");
 	By PatientEducationTxt=By.id("ctl00_txtPatEduSearch");
 	By patientEducationSearch=By.id("ctl00_btnPatEduSearch");
@@ -133,6 +133,7 @@ By MyAppts=By.id("ctl00_ucHeader_scheduleRepeater_ctl01_lnkSubMenuItem");
 		Log.info("Verification of Signout button");
 		try 
 		{
+			waitForAnElement(SignOutButton, 20);
 			flag=isElementPresent(SignOutButton);
 			Assert.assertTrue(flag, "Signout Button is not displayed");
 			return flag;
