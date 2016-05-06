@@ -44,8 +44,7 @@ private static Logger Log= Logger.getLogger(Logger.class.getName());
 	GenericAppointmentRequestPage objGenericAppointmentRequestPage;
 	MyAppointmentsPage objMyAppointmentsPage;
 	AppointmentRenewalSubmittedPage objAppointmentRenewalSubmittedPage;
-	
-	
+
 	boolean flag;
 	String actual_Result=null;
 	String parent_window=null;
@@ -108,14 +107,14 @@ private static Logger Log= Logger.getLogger(Logger.class.getName());
 		
 		String monthva=getExcelMonth(3, 2);
 		System.out.println(monthva + " Month");
-		objGenericAppointmentRequestPage.EnterStartDate(DateVa, monthva);
+	//	objGenericAppointmentRequestPage.EnterStartDate(DateVa, monthva);
 		
 		String EndDateVa=getExcelGetDatet(20, 0);
 		System.out.println(EndDateVa + "Value");
 		
 		String Endmonthva=getExcelMonth(3, 4);
 		System.out.println(Endmonthva + " Month");
-		objGenericAppointmentRequestPage.EnterEndDate(EndDateVa, Endmonthva);
+	//	objGenericAppointmentRequestPage.EnterEndDate(EndDateVa, Endmonthva);
 		
 		objGenericAppointmentRequestPage.selectPreferredTimeFrom("11:00 AM");
 		Thread.sleep(1000);
