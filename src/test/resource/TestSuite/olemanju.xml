@@ -4,9 +4,10 @@
 <parameter name="browserType" value=""/> -->
   <test name="Regression 1" >
     <classes>
-      <class name="com.pp.tests.LoginPageTest"/>
+     <class name="com.pp.tests.LoginPageTest"/>
       <class name="com.pp.tests.AccountSummaryTest"/>
-     <class name="com.pp.tests.ComposeMessageTest"/>
+      <class name="com.pp.tests.ComposeMessageTest"/>
+    
      
       
     </classes>

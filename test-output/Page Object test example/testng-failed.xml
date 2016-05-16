@@ -9,15 +9,9 @@
           <include name="setup"/>
         </methods>
       </class> <!-- com.pp.tests.ComposeMessageTest -->
-      <class name="com.pp.tests.GenericAppointmentRequestTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="LoginAndRequestForAppointment"/>
-        </methods>
-      </class> <!-- com.pp.tests.GenericAppointmentRequestTest -->
       <class name="com.pp.tests.AccountSummaryTest">
         <methods>
+          <include name="verifyScheduleMenu"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>
