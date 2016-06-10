@@ -1,0 +1,5 @@
+manjunathr@nextgen.com
+10/10/1963
+
+ <class name="com.pp.tests.ComposeMessageTest"/>
+       <class name="com.pp.tests.GenericAppointmentRequestTest"/>
